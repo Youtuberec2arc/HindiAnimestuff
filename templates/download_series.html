@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Download {{ item.title }} — {{ site_name }}{% endblock %}
+{% block content %}
+<div class="dl-page">
+  <div class="dl-topbar">
+    <a class="dl-back" href="{{ root_prefix }}pages/{{ item.id }}.html">&larr; Back to Info</a>
+  </div>
+
+  <div class="dl-header">
+    <div class="dl-poster">
+      <img src="{{ item.poster if item.poster.startswith('http') else root_prefix ~ item.poster }}" alt="{{ item.title }}" onerror="this.style.display='none'">
+    </div>
+    <div class="dl-header-info">
+      <h1 class="dl-title">{{ item.title }}</h1>
+      {% if item.season %}<span class="dl-season-badge">{{ item.season }}</span>{% endif %}
+      <div class="dl-meta">
+        {% if item.quality_tag %}<span>{{ item.quality_tag }}</span>{% endif %}
+        {% if item.languages %}<span>{{ item.languages|join(' · ') }}</span>{% endif %}
+        {% if item.episodes %}<span>{{ item.episodes }} Episodes</span>{% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if related_seasons and related_seasons|length > 1 %}
+  <section class="dl-section">
+    <h2 class="dl-section-title">Seasons</h2>
+    <div class="dl-season-row">
+      {% for s in related_seasons %}
+      <a class="dl-season-chip {{ 'active' if s.id == item.id else '' }}" href="{{ root_prefix }}download/{{ s.id }}.html">{{ s.season or 'Season' }}</a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="dl-section">
+    <h2 class="dl-section-title">Episodes</h2>
+    <div class="dl-episode-list">
+      {% for ep_num in episode_order %}
+      {% set ep_links = item.episode_links[ep_num] %}
+      <div class="dl-episode-card" id="ep-{{ ep_num }}">
+        <div class="dl-ep-label">Episode {{ ep_num }}</div>
+        <div class="dl-ep-qualities">
+          {% for q in ["1080p", "720p", "480p"] %}
+            {% if ep_links.get(q) %}
+            <a class="dl-q-btn" href="{{ root_prefix }}download/file.html?sid={{ item.id }}&ep={{ ep_num }}&q={{ q }}">{{ q }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% if related_items %}
+  <section class="dl-section">
+    <h2 class="dl-section-title">♥ You May Also Like</h2>
+    <div class="dl-related-grid">
+      {% for r in related_items[:6] %}
+      <a class="dl-related-card" href="{{ root_prefix }}pages/{{ r.id }}.html">
+        <img src="{{ r.poster if r.poster.startswith('http') else root_prefix ~ r.poster }}" alt="{{ r.title }}" loading="lazy" onerror="this.src='{{ asset_prefix }}assets/logo.svg'">
+        <span class="dl-related-title">{{ r.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="dl-actions">
+    <a class="dl-telegram-btn" href="{{ telegram_join_url }}" target="_blank" rel="noopener">✈ Join Telegram</a>
+    <a class="dl-report-btn" href="{{ report_problem_url }}" target="_blank" rel="noopener">⚠ Report a Problem</a>
+  </div>
+
+  {# Ad slot ready for future networks (Adsterra / Monetag) #}
+  <div class="ad-slot ad-slot-download" data-ad-network="placeholder" data-ad-enabled="false" aria-hidden="true"></div>
+</div>
+{% endblock %}

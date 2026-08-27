@@ -1,0 +1,3142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HindiAnimestuff — Home</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=1787764671">
+</head>
+<body data-root="">
+
+<!-- ===== TOP HEADER ===== -->
+<header class="site-header">
+  <button class="icon-btn" id="menuBtn" aria-label="Menu">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+
+  <a href="index.html" class="brand-logo" aria-label="HindiAnimestuff">
+    <img src="assets/logo.svg" alt="logo">
+  </a>
+
+  <button class="icon-btn" id="searchBtn" aria-label="Search">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</header>
+
+<!-- ===== SEARCH OVERLAY ===== -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-bar">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input type="text" id="searchInput" placeholder="Search titles..." autocomplete="off">
+    <button class="icon-btn" id="searchCloseBtn" aria-label="Close">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- ===== SIDE DRAWER MENU ===== -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<nav class="drawer" id="drawer">
+  <div class="drawer-head">
+    <img src="assets/logo.svg" alt="logo" class="drawer-logo">
+    <button class="icon-btn" id="drawerCloseBtn" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <a href="index.html" class="drawer-link active">Home</a>
+  <a href="trending.html" class="drawer-link ">Trending</a>
+  <a href="browse-az.html" class="drawer-link ">A-Z Anime List</a>
+  <a href="series.html" class="drawer-link ">Series</a>
+  <a href="movies.html" class="drawer-link ">Movies</a>
+  <a href="how-to-download.html" class="drawer-link ">How To Download</a>
+  <a href="report.html" class="drawer-link ">Report Link Not Working</a>
+
+  <a href="https://t.me/+ZY6u10TE0PdjZmM1" target="_blank" rel="noopener" class="drawer-tg-bar">
+    <svg class="drawer-tg-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+    <span class="drawer-tg-text">
+      <small>JOIN US ON</small>
+      <strong>Join Telegram</strong>
+    </span>
+    <span class="drawer-tg-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+      Join
+    </span>
+  </a>
+
+  
+  <div class="drawer-section-label">Browse by Genre</div>
+  <a href="browse-genres.html" class="drawer-link ">All Genres</a>
+  <div class="drawer-genre-list">
+    
+    <a href="genres/action.html" class="drawer-genre-chip">Action</a>
+    
+    <a href="genres/action-and-adventure.html" class="drawer-genre-chip">Action & Adventure</a>
+    
+    <a href="genres/adult.html" class="drawer-genre-chip">Adult</a>
+    
+    <a href="genres/adventure.html" class="drawer-genre-chip">Adventure</a>
+    
+    <a href="genres/animation.html" class="drawer-genre-chip">Animation</a>
+    
+    <a href="genres/anime.html" class="drawer-genre-chip">Anime</a>
+    
+    <a href="genres/comedy.html" class="drawer-genre-chip">Comedy</a>
+    
+    <a href="genres/crime.html" class="drawer-genre-chip">Crime</a>
+    
+    <a href="genres/drama.html" class="drawer-genre-chip">Drama</a>
+    
+    <a href="genres/ecchi.html" class="drawer-genre-chip">Ecchi</a>
+    
+    <a href="genres/family.html" class="drawer-genre-chip">Family</a>
+    
+    <a href="genres/fantasy.html" class="drawer-genre-chip">Fantasy</a>
+    
+    <a href="genres/harem.html" class="drawer-genre-chip">Harem</a>
+    
+    <a href="genres/hentai.html" class="drawer-genre-chip">Hentai</a>
+    
+    <a href="genres/historical.html" class="drawer-genre-chip">Historical</a>
+    
+    <a href="genres/history.html" class="drawer-genre-chip">History</a>
+    
+    <a href="genres/horror.html" class="drawer-genre-chip">Horror</a>
+    
+    <a href="genres/indian-anime.html" class="drawer-genre-chip">Indian Anime</a>
+    
+    <a href="genres/isekai.html" class="drawer-genre-chip">Isekai</a>
+    
+    <a href="genres/mystery.html" class="drawer-genre-chip">Mystery</a>
+    
+    <a href="genres/romance.html" class="drawer-genre-chip">Romance</a>
+    
+    <a href="genres/sci-fi.html" class="drawer-genre-chip">Sci-Fi</a>
+    
+    <a href="genres/sci-fi-and-fantasy.html" class="drawer-genre-chip">Sci-Fi & Fantasy</a>
+    
+    <a href="genres/science-fiction.html" class="drawer-genre-chip">Science Fiction</a>
+    
+    <a href="genres/seinen.html" class="drawer-genre-chip">Seinen</a>
+    
+    <a href="genres/shounen.html" class="drawer-genre-chip">Shounen</a>
+    
+    <a href="genres/slice-of-life.html" class="drawer-genre-chip">Slice of Life</a>
+    
+    <a href="genres/sport.html" class="drawer-genre-chip">Sport</a>
+    
+    <a href="genres/supernatural.html" class="drawer-genre-chip">Supernatural</a>
+    
+    <a href="genres/supernatural-horror.html" class="drawer-genre-chip">Supernatural Horror</a>
+    
+    <a href="genres/survival.html" class="drawer-genre-chip">Survival</a>
+    
+    <a href="genres/suspense.html" class="drawer-genre-chip">Suspense</a>
+    
+    <a href="genres/thriller.html" class="drawer-genre-chip">Thriller</a>
+    
+    <a href="genres/war.html" class="drawer-genre-chip">War</a>
+    
+  </div>
+  
+</nav>
+
+<main class="page-main">
+
+
+
+<section class="hero-carousel" id="heroCarousel">
+  
+  <div class="hero-slide">
+    <div class="hero-banner" style="background-image:url('https://image.tmdb.org/t/p/original/wdpEnRmVwMpBjajvpzSYjwken7b.jpg')">
+      <div class="hero-fade"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">The Exiled Heavy Knight Knows How to Game the System</h1>
+        <p class="hero-desc">Elymas awakens the “flawed” Heavy Knight class and is disowned. Realizing this world mirrors a VR game he mastered, he uses this secret knowledge...</p>
+        <div class="hero-actions">
+          <a class="hero-btn hero-btn-watch" href="pages/the-exiled-heavy-knight-knows-how-to-game-the-system-season--s1.html">☣ Download Now</a>
+          <a class="hero-btn hero-btn-details" href="pages/the-exiled-heavy-knight-knows-how-to-game-the-system-season--s1.html">ⓘ Details</a>
+        </div>
+        <p class="hero-note">Download servers are stable and running on faster infrastructure. Thanks for your patience!</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero-slide">
+    <div class="hero-banner" style="background-image:url('https://image.tmdb.org/t/p/original/wVJjyUbns2USXo1bolF2vGanvf6.jpg')">
+      <div class="hero-fade"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">The Elusive Samurai</h1>
+        <p class="hero-desc">Two high school boys, Mao and Hisashi, set rules to maintain boundaries while sharing a dorm room. But navigating friendship, sexuality and...</p>
+        <div class="hero-actions">
+          <a class="hero-btn hero-btn-watch" href="pages/the-elusive-samurai-s1.html">☣ Download Now</a>
+          <a class="hero-btn hero-btn-details" href="pages/the-elusive-samurai-s1.html">ⓘ Details</a>
+        </div>
+        <p class="hero-note">Download servers are stable and running on faster infrastructure. Thanks for your patience!</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+
+<div class="section-head"><h2>Anime Movies</h2></div>
+<div class="grid strip-grid">
+  
+  <div class="card">
+    <a class="card-link" href="pages/your-name-2016.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3751.png" alt="Your Name." loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.9</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Your Name.</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="your-name-2016" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/scarlet-2025.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/B4Wyxwu.jpg" alt="Scarlet" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.9</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Scarlet</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="scarlet-2025" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/your-name.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/fcyFF99.jpg" alt="Your Name" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.9</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Your Name</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="your-name" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/the-ribbon-hero-2026.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_5581.png" alt="The Ribbon Hero" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">The Ribbon Hero</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-ribbon-hero-2026" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/spirited-away-2001.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3024.png" alt="Spirited Away" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.6</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Spirited Away</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="spirited-away-2001" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/demon-slayer-kimetsu-no-yaiba-infinity-castle-2025.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_5501.png" alt="Demon Slayer: Kimetsu no Yaiba Infinity Castle" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Demon Slayer: Kimetsu no Yaiba Infinity Castle</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="demon-slayer-kimetsu-no-yaiba-infinity-castle-2025" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/howls-moving-castle-2004.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3023.png" alt="Howl's Moving Castle" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Howl's Moving Castle</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="howls-moving-castle-2004" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/jjk-0.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/KZU007a.jpg" alt="Jujutsu Kaisen 0" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Jujutsu Kaisen 0</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="jjk-0" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/suzume-2022.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3025.png" alt="Suzume" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Suzume</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="suzume-2022" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card">
+    <a class="card-link" href="pages/weathering-with-you-2019.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3027.png" alt="Weathering with You" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.5</div>
+        <div class="ep-badge">Movie</div>
+      </div>
+      <div class="info">
+        <div class="title">Weathering with You</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="weathering-with-you-2019" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+</div>
+
+
+<div class="section-head"><h2>Latest Episodes</h2></div>
+<div class="genre-bar" id="genreBar"></div>
+<div class="grid" id="cardGrid">
+  
+  <div class="card" data-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s2" data-title="reborn as a vending machine, i now wander the dungeon" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/vzxy21bDVcLAhQgYflfSgPzmarl.jpg" alt="Reborn as a Vending Machine, I Now Wander the Dungeon" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.3</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Reborn as a Vending Machine, I Now Wander the Dungeon</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s3" data-title="reborn as a vending machine, i now wander the dungeon" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/2F7zlgOtk9z0FGn2EjOFWDjGcBP.jpg" alt="Reborn as a Vending Machine, I Now Wander the Dungeon" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Reborn as a Vending Machine, I Now Wander the Dungeon</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="wistoria-wand-and-sword-s2" data-title="wistoria: wand and sword" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/wistoria-wand-and-sword-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/hM00JrQlrfI0wTSweYDMLUMcv8u.jpg" alt="Wistoria: Wand and Sword" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.1</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Wistoria: Wand and Sword</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="wistoria-wand-and-sword-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="watari-kun-s-is-about-to-collapse-s1" data-title="watari-kun’s ****** is about to collapse" data-genres="animation|comedy|romance">
+    <a class="card-link" href="pages/watari-kun-s-is-about-to-collapse-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/mKcZjgm4nT6wb1neM20P8pfAZaT.jpg" alt="Watari-kun’s ****** Is About to Collapse" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.8</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Watari-kun’s ****** Is About to Collapse</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="watari-kun-s-is-about-to-collapse-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-shippuden-s5" data-title="naruto: shippuden" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-shippuden-s5.html">
+      <div class="thumb-wrap">
+        <img src="https://i.ibb.co/sjgfNfk/image.png" alt="Naruto: Shippuden" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto: Shippuden</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-shippuden-s5" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="marriagetoxin-s1" data-title="marriagetoxin" data-genres="animation|action|comedy">
+    <a class="card-link" href="pages/marriagetoxin-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/wXyOAIxNUFTEk9Mpj7Ca4jCibMf.jpg" alt="Marriagetoxin" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Marriagetoxin</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="marriagetoxin-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="trapped-in-a-dating-sim-s1" data-title="trapped in a dating sim" data-genres="animation">
+    <a class="card-link" href="pages/trapped-in-a-dating-sim-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/TobXKc8.jpg" alt="Trapped in a Dating Sim" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Trapped in a Dating Sim</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="trapped-in-a-dating-sim-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="fullmetal-alchemist-brotherhood-s1" data-title="fullmetal alchemist: brotherhood" data-genres="animation|action|fantasy">
+    <a class="card-link" href="pages/fullmetal-alchemist-brotherhood-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg" alt="Fullmetal Alchemist: Brotherhood" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 9.2</div>
+        
+        <div class="ep-badge">EP 64</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Fullmetal Alchemist: Brotherhood</div>
+        <div class="meta">TV Series · EP 64</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="fullmetal-alchemist-brotherhood-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-shippuden-s2" data-title="naruto: shippuden" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-shippuden-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://i.ibb.co/BtVVZh4/image.png" alt="Naruto: Shippuden" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 22</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto: Shippuden</div>
+        <div class="meta">TV Series · EP 22</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-shippuden-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="mob-psycho-100-s1" data-title="mob psycho 100" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/mob-psycho-100-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/vR7hwaGQ0ySRoq1WobiNRaPs4WO.jpg" alt="Mob Psycho 100" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Mob Psycho 100</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="mob-psycho-100-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="mob-psycho-100-s2" data-title="mob psycho 100" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/mob-psycho-100-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/rPcH4klMU7vQUqmHcs5BY3ytHhm.jpg" alt="Mob Psycho 100" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.5</div>
+        
+        <div class="ep-badge">EP 14</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Mob Psycho 100</div>
+        <div class="meta">TV Series · EP 14</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="mob-psycho-100-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-shippuden-s1" data-title="naruto: shippuden" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-shippuden-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://m.media-amazon.com/images/M/MV5BZGFiMWFhNDAtMzUyZS00NmQ2LTljNDYtMmZjNTc5MDUxMzViXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg" alt="Naruto: Shippuden" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 32</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto: Shippuden</div>
+        <div class="meta">TV Series · EP 32</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-shippuden-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="food-wars-shokugeki-no-soma-s1" data-title="food wars!: shokugeki no soma" data-genres="animation|comedy|ecchi">
+    <a class="card-link" href="pages/food-wars-shokugeki-no-soma-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/aUKsUFkr0i9aBzODkBvNMgOHLzq.jpg" alt="Food Wars!: Shokugeki no Soma" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.1</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Food Wars!: Shokugeki no Soma</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="food-wars-shokugeki-no-soma-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-shippuden-s3" data-title="naruto: shippuden" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-shippuden-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://i.ibb.co/BqkSDNn/6627ee9c92dc26-68013917-Processed.jpg" alt="Naruto: Shippuden" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 16</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto: Shippuden</div>
+        <div class="meta">TV Series · EP 16</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-shippuden-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="demon-slayer-kimetsu-no-yaiba-s1" data-title="demon slayer (kimetsu no yaiba)" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/demon-slayer-kimetsu-no-yaiba-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg" alt="Demon Slayer (Kimetsu no Yaiba)" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.1</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Demon Slayer (Kimetsu no Yaiba)</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="demon-slayer-kimetsu-no-yaiba-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-shippuden-s4" data-title="naruto: shippuden" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-shippuden-s4.html">
+      <div class="thumb-wrap">
+        <img src="https://i.ibb.co/Z8SLjmG/image.pngmage.png" alt="Naruto: Shippuden" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 17</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto: Shippuden</div>
+        <div class="meta">TV Series · EP 17</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-shippuden-s4" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="bleach-s1" data-title="bleach" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/bleach-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/oehFopDepz3tgxTzISOb97C41jy.jpg" alt="Bleach" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8</div>
+        
+        <div class="ep-badge">EP 20</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Bleach</div>
+        <div class="meta">TV Series · EP 20</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="bleach-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-exiled-heavy-knight-knows-how-to-game-the-system-season--s1" data-title="the exiled heavy knight knows how to game the system" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/the-exiled-heavy-knight-knows-how-to-game-the-system-season--s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/wdpEnRmVwMpBjajvpzSYjwken7b.jpg" alt="The Exiled Heavy Knight Knows How to Game the System" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Exiled Heavy Knight Knows How to Game the System</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-exiled-heavy-knight-knows-how-to-game-the-system-season--s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="yowayowa-sensei-s1" data-title="yowayowa sensei" data-genres="animation|comedy|adult">
+    <a class="card-link" href="pages/yowayowa-sensei-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/1WDp9RjN7odYw490WLNw79iceLa.jpg" alt="Yowayowa Sensei" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Yowayowa Sensei</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="yowayowa-sensei-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-elusive-samurai-s1" data-title="the elusive samurai" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/the-elusive-samurai-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/wVJjyUbns2USXo1bolF2vGanvf6.jpg" alt="The Elusive Samurai" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Elusive Samurai</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-elusive-samurai-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="oshi-no-ko-s2" data-title="oshi no ko" data-genres="animation|drama|seinen">
+    <a class="card-link" href="pages/oshi-no-ko-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/mErHxLBgXK3FrfigrA19QFS1nbz.jpg" alt="Oshi no Ko" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.0</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Oshi no Ko</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="oshi-no-ko-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="oshi-no-ko-s3" data-title="oshi no ko" data-genres="animation|drama|seinen">
+    <a class="card-link" href="pages/oshi-no-ko-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/h1OvOSLAyDtKTHTMz9bE1mqCnXD.jpg" alt="Oshi no Ko" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.6</div>
+        
+        <div class="ep-badge">EP 11</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Oshi no Ko</div>
+        <div class="meta">TV Series · EP 11</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="oshi-no-ko-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="clevatess-s1" data-title="clevatess" data-genres="animation|fantasy|drama">
+    <a class="card-link" href="pages/clevatess-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/jMQ7IMljkAOV2DqQtK82dWjWm76.jpg" alt="Clevatess" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Clevatess</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="clevatess-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="scum-of-the-brave-s1" data-title="scum of the brave" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/scum-of-the-brave-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/kSJv65fW98dUqRD5f0ahLLYoZQN.jpg" alt="Scum of the Brave" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.5</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Scum of the Brave</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="scum-of-the-brave-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="arifureta-from-commonplace-to-world-s-strongest-s3" data-title="arifureta: from commonplace to world’s strongest" data-genres="animation|fantasy|romance">
+    <a class="card-link" href="pages/arifureta-from-commonplace-to-world-s-strongest-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://cdn.myanimelist.net/images/anime/1553/145597l.jpg" alt="Arifureta: From Commonplace to World’s Strongest" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 16</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Arifureta: From Commonplace to World’s Strongest</div>
+        <div class="meta">TV Series · EP 16</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="arifureta-from-commonplace-to-world-s-strongest-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-angel-next-door-spoils-me-rotten-s2" data-title="the angel next door spoils me rotten" data-genres="animation|comedy|romance">
+    <a class="card-link" href="pages/the-angel-next-door-spoils-me-rotten-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/pjNFTabj2mXUGquE8Oj3buPeKvQ.jpg" alt="The Angel Next Door Spoils Me Rotten" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Angel Next Door Spoils Me Rotten</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-angel-next-door-spoils-me-rotten-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="an-observation-log-of-my-fianc-e-who-calls-herself-a-villain-s1" data-title="an observation log of my fiancée who calls herself a villainess" data-genres="animation|romance|fantasy">
+    <a class="card-link" href="pages/an-observation-log-of-my-fianc-e-who-calls-herself-a-villain-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/xlpYhXiyX52t6Dtg1fFN0CqLbK4.jpg" alt="An Observation Log of My Fiancée Who Calls Herself a Villainess" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">An Observation Log of My Fiancée Who Calls Herself a Villainess</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="an-observation-log-of-my-fianc-e-who-calls-herself-a-villain-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="heaven-officials-blessing-s1" data-title="heaven official's blessing" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/heaven-officials-blessing-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/4psWk1qJZKXlH78DjZUnvXCwSAM.jpg" alt="Heaven Official's Blessing" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Heaven Official's Blessing</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="heaven-officials-blessing-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-ribbon-hero-2026" data-title="the ribbon hero" data-genres="animation|fantasy|drama|action">
+    <a class="card-link" href="pages/the-ribbon-hero-2026.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_5581.png" alt="The Ribbon Hero" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Ribbon Hero</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-ribbon-hero-2026" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="demon-slayer-kimetsu-no-yaiba-infinity-castle-2025" data-title="demon slayer: kimetsu no yaiba infinity castle" data-genres="animation|action|fantasy">
+    <a class="card-link" href="pages/demon-slayer-kimetsu-no-yaiba-infinity-castle-2025.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_5501.png" alt="Demon Slayer: Kimetsu no Yaiba Infinity Castle" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Demon Slayer: Kimetsu no Yaiba Infinity Castle</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="demon-slayer-kimetsu-no-yaiba-infinity-castle-2025" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="tomb-raider-king-s1" data-title="tomb raider king" data-genres="action|adventure|fantasy">
+    <a class="card-link" href="pages/tomb-raider-king-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/CeqYHgV.jpg" alt="Tomb Raider King" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Tomb Raider King</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="tomb-raider-king-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="tamons-b-side-s1" data-title="tamon's b-side" data-genres="comedy|romance">
+    <a class="card-link" href="pages/tamons-b-side-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/Cfbzkxe.jpg" alt="Tamon's B-Side" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.9</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Tamon's B-Side</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="tamons-b-side-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="my-hero-academia-vigilantes-s1" data-title="my hero academia: vigilantes" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/my-hero-academia-vigilantes-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/iv0cXt6uJGlTryWZNQMGyum4Pme.jpg" alt="My Hero Academia: Vigilantes" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">My Hero Academia: Vigilantes</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="my-hero-academia-vigilantes-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="my-hero-academia-vigilantes-s2" data-title="my hero academia: vigilantes" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/my-hero-academia-vigilantes-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/5To7gr0PmuAvo31YLwb3EQpMlVy.jpg" alt="My Hero Academia: Vigilantes" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">My Hero Academia: Vigilantes</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="my-hero-academia-vigilantes-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="sword-of-the-demon-hunter-kijin-gentosho-s1" data-title="sword of the demon hunter: kijin gentosho" data-genres="animation|drama|fantasy">
+    <a class="card-link" href="pages/sword-of-the-demon-hunter-kijin-gentosho-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/8BNGnDKMaDvpmkTd6z9pQL97Upe.jpg" alt="Sword of the Demon Hunter: Kijin Gentosho" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Sword of the Demon Hunter: Kijin Gentosho</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="sword-of-the-demon-hunter-kijin-gentosho-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="farming-life-in-another-world-s2" data-title="farming life in another world" data-genres="animation|romance|fantasy|isekai">
+    <a class="card-link" href="pages/farming-life-in-another-world-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/zkrJW2bzwzeY0yqGaQ36rO2UBi2.jpg" alt="Farming Life in Another World" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Farming Life in Another World</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="farming-life-in-another-world-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="snowball-earth-s1" data-title="snowball earth" data-genres="animation|anime|fantasy">
+    <a class="card-link" href="pages/snowball-earth-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/rLin4VCC1QK7MDmeaSBZqw7SWRu.jpg" alt="Snowball Earth" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Snowball Earth</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="snowball-earth-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="agents-of-the-four-seasons-dance-of-spring-s1" data-title="agents of the four seasons: dance of spring" data-genres="drama|fantasy|romance">
+    <a class="card-link" href="pages/agents-of-the-four-seasons-dance-of-spring-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/zbzbUDLO3iTAuXDmoqtpOsrtLPi.jpg" alt="Agents of the Four Seasons: Dance of Spring" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 14</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Agents of the Four Seasons: Dance of Spring</div>
+        <div class="meta">TV Series · EP 14</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="agents-of-the-four-seasons-dance-of-spring-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-warrior-princess-and-the-barbaric-king-s1" data-title="the warrior princess and the barbaric king" data-genres="animation|fantasy|romance">
+    <a class="card-link" href="pages/the-warrior-princess-and-the-barbaric-king-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/hO5fLLMqteEopcYy5r0gQB1pWl.jpg" alt="The Warrior Princess and the Barbaric King" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Warrior Princess and the Barbaric King</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-warrior-princess-and-the-barbaric-king-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-beginning-after-the-end-s2" data-title="the beginning after the end" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/the-beginning-after-the-end-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/d23Lspt2mbVP8WwJNgb5Sg4Kdhu.jpg" alt="The Beginning After the End" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 5.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Beginning After the End</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-beginning-after-the-end-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-s1" data-title="naruto" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/w780/xppeysfvDKVx775MFuH8Z9BlpMk.jpg" alt="Naruto" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-s2" data-title="naruto" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/cJrfs3y.jpg" alt="Naruto" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-s3" data-title="naruto" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9168978_b_v12_ab.jpg" alt="Naruto" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-s4" data-title="naruto" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-s4.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/w780/xppeysfvDKVx775MFuH8Z9BlpMk.jpg" alt="Naruto" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-s4" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-s5" data-title="naruto" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-s5.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/w780/xppeysfvDKVx775MFuH8Z9BlpMk.jpg" alt="Naruto" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-s5" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-s6" data-title="naruto" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-s6.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/w780/xppeysfvDKVx775MFuH8Z9BlpMk.jpg" alt="Naruto" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-s6" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="naruto-s7" data-title="naruto" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/naruto-s7.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/w780/xppeysfvDKVx775MFuH8Z9BlpMk.jpg" alt="Naruto" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 26</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Naruto</div>
+        <div class="meta">TV Series · EP 26</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="naruto-s7" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s1" data-title="reborn as a vending machine, i now wander the dungeon" data-genres="adventure|comedy|fantasy">
+    <a class="card-link" href="pages/reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s1.html">
+      <div class="thumb-wrap">
+        <img src="https://cdn.myanimelist.net/images/anime/1653/136097l.jpg" alt="Reborn as a Vending Machine, I Now Wander the Dungeon" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Reborn as a Vending Machine, I Now Wander the Dungeon</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="witch-hat-atelier-s1" data-title="witch hat atelier" data-genres="animation|comedy|drama">
+    <a class="card-link" href="pages/witch-hat-atelier-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/2UaeNqmbSO02Rz3T0hOacnHr7i6.jpg" alt="Witch Hat Atelier" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Witch Hat Atelier</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="witch-hat-atelier-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-ramparts-of-ice-s1" data-title="the ramparts of ice" data-genres="animation|comedy|drama">
+    <a class="card-link" href="pages/the-ramparts-of-ice-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/A2h4bwSPlpnl2E3FQQiILl0Gk27.jpg" alt="The Ramparts of Ice" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 14</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Ramparts of Ice</div>
+        <div class="meta">TV Series · EP 14</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-ramparts-of-ice-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="no-longer-allowed-in-another-world-s1" data-title="no longer allowed in another world" data-genres="action|adventure|comedy|fantasy|isekai">
+    <a class="card-link" href="pages/no-longer-allowed-in-another-world-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/P8eT8xB.jpeg" alt="No Longer Allowed in Another World" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.4</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">No Longer Allowed in Another World</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="no-longer-allowed-in-another-world-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-summer-hikaru-died-s1" data-title="the summer hikaru died" data-genres="animation|slice of life|supernatural horror">
+    <a class="card-link" href="pages/the-summer-hikaru-died-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/8GlFAKvm7UIFNctrtoqbSA3kpsT.jpg" alt="The Summer Hikaru Died" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.1</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Summer Hikaru Died</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-summer-hikaru-died-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="taisho-era-contract-marriage-s1" data-title="taisho era contract marriage: the substitute bride and a soldier's fierce love" data-genres="hentai|harem|historical">
+    <a class="card-link" href="pages/taisho-era-contract-marriage-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/w400/tjFsFk0OWzaeSgYdoSD4nkiMkwV.jpg" alt="Taisho Era Contract Marriage: The Substitute Bride and a Soldier's Fierce Love" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.0</div>
+        
+        <div class="ep-badge">EP 8</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Taisho Era Contract Marriage: The Substitute Bride and a Soldier's Fierce Love</div>
+        <div class="meta">TV Series · EP 8</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="taisho-era-contract-marriage-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="farming-life-in-another-world-s1" data-title="farming life in another world" data-genres="animation|romance|fantasy|isekai">
+    <a class="card-link" href="pages/farming-life-in-another-world-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/pT4OoVQE8zGJ0Z0GZpJotK5Vzsj.jpg" alt="Farming Life in Another World" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Farming Life in Another World</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="farming-life-in-another-world-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="from-old-country-bumpkin-to-master-swordsman-s1" data-title="from old country bumpkin to master swordsman" data-genres="action|adventure|animation|comedy|fantasy">
+    <a class="card-link" href="pages/from-old-country-bumpkin-to-master-swordsman-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/w780/ujQp5egkJOkDHx4TehlgHePFcRv.jpg" alt="From Old Country Bumpkin to Master Swordsman" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.7</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">From Old Country Bumpkin to Master Swordsman</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="from-old-country-bumpkin-to-master-swordsman-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="chainsaw-man-reze-arc-movie" data-title="chainsaw man - the movie: reze arc" data-genres="animation|action|romance|fantasy">
+    <a class="card-link" href="pages/chainsaw-man-reze-arc-movie.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_4481.png" alt="Chainsaw Man - The Movie: Reze Arc" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Chainsaw Man - The Movie: Reze Arc</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="chainsaw-man-reze-arc-movie" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="suzume-2022" data-title="suzume" data-genres="animation|drama|adventure|fantasy">
+    <a class="card-link" href="pages/suzume-2022.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3025.png" alt="Suzume" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Suzume</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="suzume-2022" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="your-name-2016" data-title="your name." data-genres="animation|romance|drama">
+    <a class="card-link" href="pages/your-name-2016.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3751.png" alt="Your Name." loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.9</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Your Name.</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="your-name-2016" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="weathering-with-you-2019" data-title="weathering with you" data-genres="animation|drama|fantasy|romance">
+    <a class="card-link" href="pages/weathering-with-you-2019.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3027.png" alt="Weathering with You" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.5</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Weathering with You</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="weathering-with-you-2019" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-garden-of-words-2013" data-title="the garden of words" data-genres="animation|drama|romance">
+    <a class="card-link" href="pages/the-garden-of-words-2013.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3026.png" alt="The Garden of Words" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.4</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Garden of Words</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-garden-of-words-2013" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="spirited-away-2001" data-title="spirited away" data-genres="animation|adventure|fantasy|family">
+    <a class="card-link" href="pages/spirited-away-2001.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3024.png" alt="Spirited Away" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.6</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Spirited Away</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="spirited-away-2001" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="howls-moving-castle-2004" data-title="howl's moving castle" data-genres="animation|adventure|fantasy|romance">
+    <a class="card-link" href="pages/howls-moving-castle-2004.html">
+      <div class="thumb-wrap">
+        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_3023.png" alt="Howl's Moving Castle" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Howl's Moving Castle</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="howls-moving-castle-2004" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="karna-the-guardian-s1" data-title="karna the guardian" data-genres="action|adventure|indian anime">
+    <a class="card-link" href="pages/karna-the-guardian-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/3M7PkwXvT2scTNUoXOaCqlIpfVM.jpg" alt="Karna The Guardian" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Karna The Guardian</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="karna-the-guardian-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="overflow-s1" data-title="overflow" data-genres="harem|hentai">
+    <a class="card-link" href="pages/overflow-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.ibb.co/Pvk14bQ6/zmo-MA9-Lx.jpg" alt="Overflow" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.6</div>
+        
+        <div class="ep-badge">EP 8</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Overflow</div>
+        <div class="meta">OVA · EP 8</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="overflow-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="skeleton-knight-in-another-world-season-1-buray-s1" data-title="skeleton knight in another world" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/skeleton-knight-in-another-world-season-1-buray-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/u3I5oBEOLf2Vi3gYpQNABdCzzoB.jpg" alt="Skeleton Knight in Another World" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Skeleton Knight in Another World</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="skeleton-knight-in-another-world-season-1-buray-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="an-adventurer-s-daily-grind-at-age-29-s1" data-title="an adventurer’s daily grind at age 29" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/an-adventurer-s-daily-grind-at-age-29-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/cqT49U15uBjkaR8n64rJ2Z9CkIP.jpg" alt="An Adventurer’s Daily Grind at Age 29" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.4</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">An Adventurer’s Daily Grind at Age 29</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="an-adventurer-s-daily-grind-at-age-29-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-reincarnation-of-the-strongest-exorcist-in-another-world-s1" data-title="the reincarnation of the strongest exorcist in another world" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/the-reincarnation-of-the-strongest-exorcist-in-another-world-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.ibb.co/qy3SVtN/image.png" alt="The Reincarnation of the Strongest Exorcist in Another World" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.1</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Reincarnation of the Strongest Exorcist in Another World</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-reincarnation-of-the-strongest-exorcist-in-another-world-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="daemons-of-the-shadow-realm-s1" data-title="daemons of the shadow realm" data-genres="animation|anime|drama">
+    <a class="card-link" href="pages/daemons-of-the-shadow-realm-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/i4t9z7QDNPJjg59vJunCHdh0mj2.jpg" alt="Daemons of the Shadow Realm" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 17</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Daemons of the Shadow Realm</div>
+        <div class="meta">TV Series · EP 17</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="daemons-of-the-shadow-realm-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="gantz-2004-s1" data-title="gantz (2004)" data-genres="anime|seinen|survival">
+    <a class="card-link" href="pages/gantz-2004-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/gvuKmao8tnjIJUPN6mocwGur7Ai.jpg" alt="Gantz (2004)" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.1</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Gantz (2004)</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="gantz-2004-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="gantz-2004-s2" data-title="gantz (2004)" data-genres="anime|seinen|survival">
+    <a class="card-link" href="pages/gantz-2004-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/cE1FZ117b95UaBr4VoCRF1fpiLd.jpg" alt="Gantz (2004)" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.1</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Gantz (2004)</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="gantz-2004-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="devil-may-cry-s2" data-title="devil may cry" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/devil-may-cry-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/yMljqXfrWrsTTe0KniNqRemDH58.jpg" alt="Devil May Cry" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 8</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Devil May Cry</div>
+        <div class="meta">TV Series · EP 8</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="devil-may-cry-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="blue-box-s1" data-title="blue box" data-genres="animation|slice of life|romance">
+    <a class="card-link" href="pages/blue-box-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/c0h8qONUlE0zMwi6RRQry9t3gke.jpg" alt="Blue Box" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">EP 25</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Blue Box</div>
+        <div class="meta">TV Series · EP 25</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="blue-box-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-strongest-magician-in-the-demon-lord-s-army-was-a-human--s1" data-title="the strongest magician in the demon lord’s army was a human" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/the-strongest-magician-in-the-demon-lord-s-army-was-a-human--s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/tfrlWXvlBaMXe45ANvprnugB2g2.jpg" alt="The Strongest Magician in the Demon Lord’s Army Was a Human" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.4</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Strongest Magician in the Demon Lord’s Army Was a Human</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-strongest-magician-in-the-demon-lord-s-army-was-a-human--s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="my-status-as-an-assassin-obviously-exceeds-the-hero-s-season-s1" data-title="my status as an assassin obviously exceeds the hero’s" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/my-status-as-an-assassin-obviously-exceeds-the-hero-s-season-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/oIabJ2TFwunTPSoYc0Unp8YcxIL.jpg" alt="My Status as an Assassin Obviously Exceeds the Hero’s" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">My Status as an Assassin Obviously Exceeds the Hero’s</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="my-status-as-an-assassin-obviously-exceeds-the-hero-s-season-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="dr-stone-s3" data-title="dr. stone" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/dr-stone-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/iIv0d3MRqplxt22nKz9jE2CGnvu.jpg" alt="Dr. Stone" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 22</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Dr. Stone</div>
+        <div class="meta">TV Series · EP 22</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="dr-stone-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="dr-stone-s4" data-title="dr. stone: science future" data-genres="adventure|comedy|shounen">
+    <a class="card-link" href="pages/dr-stone-s4.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/1Oj5RDF.jpeg" alt="Dr. Stone: Science Future" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.7</div>
+        
+        <div class="ep-badge">EP 37</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Dr. Stone: Science Future</div>
+        <div class="meta">TV Series · EP 37</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="dr-stone-s4" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s1" data-title="campfire cooking in another world with my absurd skill" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/i9dL4Prs5UImh3YpCgN2DbjYoCg.jpg" alt="Campfire Cooking in Another World with My Absurd Skill" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Campfire Cooking in Another World with My Absurd Skill</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s2" data-title="campfire cooking in another world with my absurd skill" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/rAfnEjWKCam13IFFIrzAzep4hIH.jpg" alt="Campfire Cooking in Another World with My Absurd Skill" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Campfire Cooking in Another World with My Absurd Skill</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="scarlet-2025" data-title="scarlet" data-genres="adventure|drama|fantasy">
+    <a class="card-link" href="pages/scarlet-2025.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/B4Wyxwu.jpg" alt="Scarlet" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.9</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Scarlet</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="scarlet-2025" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="your-name" data-title="your name" data-genres="adventure|drama|fantasy|romance">
+    <a class="card-link" href="pages/your-name.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/fcyFF99.jpg" alt="Your Name" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.9</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Your Name</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="your-name" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="yuri-on-ice-s1" data-title="yuri!!! on ice" data-genres="anime|romance|sport">
+    <a class="card-link" href="pages/yuri-on-ice-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/fb6SCGV.jpg" alt="Yuri!!! On Ice" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Yuri!!! On Ice</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="yuri-on-ice-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="code-geass-s1" data-title="code geass" data-genres="animation|action|drama">
+    <a class="card-link" href="pages/code-geass-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/HAhw8IK.jpg" alt="Code Geass" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        
+        <div class="ep-badge">EP 25</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Code Geass</div>
+        <div class="meta">TV Series · EP 25</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="code-geass-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="lookism-s1" data-title="lookism" data-genres="action|drama|supernatural">
+    <a class="card-link" href="pages/lookism-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/z5Ok5qV.jpg" alt="Lookism" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.4</div>
+        
+        <div class="ep-badge">EP 8</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Lookism</div>
+        <div class="meta">TV Series · EP 8</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="lookism-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="viral-hit-s1" data-title="viral hit" data-genres="animation|action|comedy">
+    <a class="card-link" href="pages/viral-hit-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/aOwHi9S.jpeg" alt="Viral Hit" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.32</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Viral Hit</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="viral-hit-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="wistoria-wand-and-sword-s1" data-title="wistoria: wand and sword" data-genres="animation|action|adventure|comedy|drama|fantasy">
+    <a class="card-link" href="pages/wistoria-wand-and-sword-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/5zfCyzblaQ1Cq654rNjEHYTmgMZ.jpg" alt="Wistoria: Wand and Sword" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Wistoria: Wand and Sword</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="wistoria-wand-and-sword-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="the-angel-next-door-s1" data-title="the angel next door spoils me rotten" data-genres="animation|comedy|romance">
+    <a class="card-link" href="pages/the-angel-next-door-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/VjyQ7QN.png" alt="The Angel Next Door Spoils Me Rotten" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.9</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Angel Next Door Spoils Me Rotten</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="the-angel-next-door-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="easygoing-territory-defense-by-the-optimistic-lord-s1" data-title="easygoing territory defense by the optimistic lord" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="pages/easygoing-territory-defense-by-the-optimistic-lord-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/2ctXv1LyyVad5VLToS1t2ZqSCQa.jpg" alt="Easygoing Territory Defense by the Optimistic Lord" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.9</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Easygoing Territory Defense by the Optimistic Lord</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="easygoing-territory-defense-by-the-optimistic-lord-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="dr-stone-s1" data-title="dr. stone" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/dr-stone-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/58EudfXv38HfupYBpfn8txOlZpO.jpg" alt="Dr. Stone" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Dr. Stone</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="dr-stone-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="dr-stone-s2" data-title="dr. stone" data-genres="animation|action|adventure|comedy|sci-fi">
+    <a class="card-link" href="pages/dr-stone-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/2DbgVq6Ic4Zh648Xz1al3TqaGBR.jpg" alt="Dr. Stone" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 11</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Dr. Stone</div>
+        <div class="meta">TV Series · EP 11</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="dr-stone-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="my-dress-up-darling-s1" data-title="my dress-up darling" data-genres="animation|comedy|romance">
+    <a class="card-link" href="pages/my-dress-up-darling-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/6MKNFBQMkhmwlQcobtjQc79rgvc.jpg" alt="My Dress-Up Darling" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">My Dress-Up Darling</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="my-dress-up-darling-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="my-dress-up-darling-s2" data-title="my dress-up darling" data-genres="animation|comedy|romance">
+    <a class="card-link" href="pages/my-dress-up-darling-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/vLEYuU2EY6qZXpnperPevWwjPFN.jpg" alt="My Dress-Up Darling" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">My Dress-Up Darling</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="my-dress-up-darling-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="oshi-no-ko-s1" data-title="oshi no ko" data-genres="animation|drama|seinen">
+    <a class="card-link" href="pages/oshi-no-ko-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/sVc9arJOuIvOKOEFkQkWImvb0CZ.jpg" alt="Oshi no Ko" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.6</div>
+        
+        <div class="ep-badge">EP 11</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Oshi no Ko</div>
+        <div class="meta">TV Series · EP 11</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="oshi-no-ko-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="bucchigiri-s1" data-title="bucchigiri?!" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/bucchigiri-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/rAfnEjWKCam13IFFIrzAzep4hIH.jpg" alt="Bucchigiri?!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.9</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Bucchigiri?!</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="bucchigiri-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="my-happy-marriage-s1" data-title="my happy marriage" data-genres="animation|fantasy|romance">
+    <a class="card-link" href="pages/my-happy-marriage-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/5RZIBqSYHhpQF6s8Dgw2aXlA4ZS.jpg" alt="My Happy Marriage" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.7</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">My Happy Marriage</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="my-happy-marriage-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="my-happy-marriage-s2" data-title="my happy marriage" data-genres="drama|fantasy|romance">
+    <a class="card-link" href="pages/my-happy-marriage-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/KOwg1rB.jpeg" alt="My Happy Marriage" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">My Happy Marriage</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="my-happy-marriage-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="overlord-s1" data-title="overlord" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/overlord-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/Lznc1Mc.jpeg" alt="Overlord" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.9</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Overlord</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="overlord-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="overlord-s2" data-title="overlord" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/overlord-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/bLY5cXU.jpeg" alt="Overlord" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Overlord</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="overlord-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="overlord-s3" data-title="overlord" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/overlord-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/EjQoKYD.jpeg" alt="Overlord" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.7</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Overlord</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="overlord-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="overlord-s4" data-title="overlord" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/overlord-s4.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/Bs2hVbH.jpeg" alt="Overlord" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Overlord</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="overlord-s4" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="arifureta-from-commonplace-to-world-s-strongest-s1" data-title="arifureta: from commonplace to world’s strongest" data-genres="animation|fantasy|romance">
+    <a class="card-link" href="pages/arifureta-from-commonplace-to-world-s-strongest-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/lBVbu6YUvNvEikvq7GEiLSzKhhH.jpg" alt="Arifureta: From Commonplace to World’s Strongest" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Arifureta: From Commonplace to World’s Strongest</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="arifureta-from-commonplace-to-world-s-strongest-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="arifureta-from-commonplace-to-world-s-strongest-s2" data-title="arifureta: from commonplace to world’s strongest" data-genres="animation|fantasy|romance">
+    <a class="card-link" href="pages/arifureta-from-commonplace-to-world-s-strongest-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/3Te6pYJNdh4YyWY1G7ANxNHpedi.jpg" alt="Arifureta: From Commonplace to World’s Strongest" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Arifureta: From Commonplace to World’s Strongest</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="arifureta-from-commonplace-to-world-s-strongest-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="solo-leveling-season-1" data-title="solo leveling" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/solo-leveling-season-1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/HPAScdZ.jpg" alt="Solo Leveling" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Solo Leveling</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="solo-leveling-season-1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="solo-leveling-season-2" data-title="solo leveling" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/solo-leveling-season-2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/rsOApVLbIQEcNkqSlOxNPyg3FyI.jpg" alt="Solo Leveling" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Solo Leveling</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="solo-leveling-season-2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="i-got-a-cheat-skill-in-another-world-and-became-unrivaled-in-s1" data-title="i got a cheat skill in another world and became unrivaled in the real world, too" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/i-got-a-cheat-skill-in-another-world-and-became-unrivaled-in-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.ibb.co/cFvDN63/image.png" alt="I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.4</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="i-got-a-cheat-skill-in-another-world-and-became-unrivaled-in-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="bye-bye-earth-s1" data-title="bye bye, earth" data-genres="action|adventure|fantasy">
+    <a class="card-link" href="pages/bye-bye-earth-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/vHdxGdC.jpeg" alt="Bye Bye, Earth" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.7</div>
+        
+        <div class="ep-badge">EP 10</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Bye Bye, Earth</div>
+        <div class="meta">TV Series · EP 10</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="bye-bye-earth-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="bye-bye-earth-s2" data-title="bye bye, earth" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/bye-bye-earth-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/asAS7WM.jpeg" alt="Bye Bye, Earth" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.2</div>
+        
+        <div class="ep-badge">EP 10</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Bye Bye, Earth</div>
+        <div class="meta">TV Series · EP 10</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="bye-bye-earth-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="ranma-1-2-2024-s1" data-title="ranma 1/2 (2024)" data-genres="animation|adventure|comedy">
+    <a class="card-link" href="pages/ranma-1-2-2024-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/y0yUO3gvFfHkwSDYf9VqSMsS4b1.jpg" alt="Ranma 1/2 (2024)" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Ranma 1/2 (2024)</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="ranma-1-2-2024-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="ranma-1-2-s2" data-title="ranma 1/2" data-genres="animation|adventure|comedy">
+    <a class="card-link" href="pages/ranma-1-2-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/6Qs9z2MEURhKtFUNh9U8AKbdeY2.jpg" alt="Ranma 1/2" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.4</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Ranma 1/2</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="ranma-1-2-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="attack-on-titan-s1" data-title="attack on titan" data-genres="animation|adventure|drama">
+    <a class="card-link" href="pages/attack-on-titan-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/fT6Dcd0Yp1nf1bAUJP3vAm8O1Rg.jpg" alt="Attack on Titan" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 9.1</div>
+        
+        <div class="ep-badge">EP 25</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Attack on Titan</div>
+        <div class="meta">TV Series · EP 25</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="attack-on-titan-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="attack-on-titan-s2" data-title="attack on titan" data-genres="animation|adventure|drama">
+    <a class="card-link" href="pages/attack-on-titan-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/2fhK0wbFixskgRyuq6YvaMn75et.jpg" alt="Attack on Titan" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 9.1</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Attack on Titan</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="attack-on-titan-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="attack-on-titan-s3" data-title="attack on titan" data-genres="animation|adventure|drama">
+    <a class="card-link" href="pages/attack-on-titan-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/FN1k1RS.jpeg" alt="Attack on Titan" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 9.1</div>
+        
+        <div class="ep-badge">EP 22</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Attack on Titan</div>
+        <div class="meta">TV Series · EP 22</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="attack-on-titan-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="attack-on-titan-season-4-episodes-s4" data-title="attack on titan" data-genres="animation|adventure|drama">
+    <a class="card-link" href="pages/attack-on-titan-season-4-episodes-s4.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/AC4PhvA.jpeg" alt="Attack on Titan" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 9.1</div>
+        
+        <div class="ep-badge">EP 28</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Attack on Titan</div>
+        <div class="meta">TV Series · EP 28</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="attack-on-titan-season-4-episodes-s4" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="jujutsu-kaisen-s1" data-title="jujutsu kaisen" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/jujutsu-kaisen-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/mJVUZpPR4BdZzLWyP51h8pOU1RO.jpg" alt="Jujutsu Kaisen" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.6</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Jujutsu Kaisen</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="jujutsu-kaisen-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="jujutsu-kaisen-s2" data-title="jujutsu kaisen" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/jujutsu-kaisen-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/24Sdguu.jpg" alt="Jujutsu Kaisen" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.8</div>
+        
+        <div class="ep-badge">EP 23</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Jujutsu Kaisen</div>
+        <div class="meta">TV Series · EP 23</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="jujutsu-kaisen-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="jujutsu-kaisen-s3" data-title="jujutsu kaisen" data-genres="animation|action|comedy">
+    <a class="card-link" href="pages/jujutsu-kaisen-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/kWcxo94dMo9FqqnxyYTC3yePpLH.jpg" alt="Jujutsu Kaisen" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Jujutsu Kaisen</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="jujutsu-kaisen-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="jjk-0" data-title="jujutsu kaisen 0" data-genres="action|supernatural">
+    <a class="card-link" href="pages/jjk-0.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/KZU007a.jpg" alt="Jujutsu Kaisen 0" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">Movie</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Jujutsu Kaisen 0</div>
+        <div class="meta">Movie · Movie</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="jjk-0" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="that-time-i-got-reincarnated-as-a-slime-s1" data-title="that time i got reincarnated as a slime" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/that-time-i-got-reincarnated-as-a-slime-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/k5a976anPbFvKwm9ExUtJW6Kq1m.jpg" alt="That Time I Got Reincarnated as a Slime" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">That Time I Got Reincarnated as a Slime</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="that-time-i-got-reincarnated-as-a-slime-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="that-time-i-got-reincarnated-as-a-slime-s2" data-title="that time i got reincarnated as a slime" data-genres="animation|action|adventure|comedy|fantasy">
+    <a class="card-link" href="pages/that-time-i-got-reincarnated-as-a-slime-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/5opPyfg0dsFUSrJyCipGQ61J7h2.jpg" alt="That Time I Got Reincarnated as a Slime" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">That Time I Got Reincarnated as a Slime</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="that-time-i-got-reincarnated-as-a-slime-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="that-time-i-got-reincarnated-as-a-slime-s3" data-title="that time i got reincarnated as a slime" data-genres="action|adventure|comedy|fantasy">
+    <a class="card-link" href="pages/that-time-i-got-reincarnated-as-a-slime-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/lq1sdy1if8W8vUhlErjrpHe59IZ.jpg" alt="That Time I Got Reincarnated as a Slime" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">That Time I Got Reincarnated as a Slime</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="that-time-i-got-reincarnated-as-a-slime-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="slime-s4" data-title="that time i got reincarnated as a slime" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/slime-s4.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/94MjsZUyxubodMPJdWOVkcJ0bdU.jpg" alt="That Time I Got Reincarnated as a Slime" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">Season 4</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">That Time I Got Reincarnated as a Slime</div>
+        <div class="meta">TV Series · Season 4</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="slime-s4" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="vinland-saga-s1" data-title="vinland saga" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/vinland-saga-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/tXnBhR1.jpg" alt="Vinland Saga" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Vinland Saga</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="vinland-saga-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="vinland-saga-s2" data-title="vinland saga" data-genres="animation|action|adventure">
+    <a class="card-link" href="pages/vinland-saga-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/NR6ybnc.jpg" alt="Vinland Saga" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Vinland Saga</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="vinland-saga-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="sakamoto-days-s1" data-title="sakamoto days" data-genres="comedy|action">
+    <a class="card-link" href="pages/sakamoto-days-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/2JgOLVl.jpeg" alt="Sakamoto Days" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.5</div>
+        
+        <div class="ep-badge">EP 22</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Sakamoto Days</div>
+        <div class="meta">TV Series · EP 22</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="sakamoto-days-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="classroom-of-the-elite-s1" data-title="classroom of the elite" data-genres="animation|drama|thriller">
+    <a class="card-link" href="pages/classroom-of-the-elite-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/yuHanbUUIv2UWRxxQFt9n8jtmOJ.jpg" alt="Classroom of the Elite" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.49</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Classroom of the Elite</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="classroom-of-the-elite-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="classroom-of-the-elite-s2" data-title="classroom of the elite" data-genres="animation|drama|thriller">
+    <a class="card-link" href="pages/classroom-of-the-elite-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/lLD9Xg5bASKrUAp7bLCm7s8WbKW.jpg" alt="Classroom of the Elite" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.49</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Classroom of the Elite</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="classroom-of-the-elite-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="classroom-of-the-elite-s3" data-title="classroom of the elite" data-genres="animation|drama|thriller">
+    <a class="card-link" href="pages/classroom-of-the-elite-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/wyATdDDS7T6hMwtI7AnMMjVwsGA.jpg" alt="Classroom of the Elite" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.9</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Classroom of the Elite</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="classroom-of-the-elite-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="lord-of-mysteries-s1" data-title="lord of mysteries" data-genres="fantasy|mystery|thriller">
+    <a class="card-link" href="pages/lord-of-mysteries-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/c8fHePq3yTn3WvZd4hupkHwsjm5.jpg" alt="Lord of Mysteries" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.5</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Lord of Mysteries</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="lord-of-mysteries-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="devil-may-cry-s1" data-title="devil may cry" data-genres="animation|adventure|fantasy">
+    <a class="card-link" href="pages/devil-may-cry-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/qm6Mi9051Ws1eG1mtfUbetJunvI.jpg" alt="Devil May Cry" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 8</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Devil May Cry</div>
+        <div class="meta">TV Series · EP 8</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="devil-may-cry-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="sentenced-to-be-a-hero-s1" data-title="sentenced to be a hero" data-genres="animation|comedy|drama">
+    <a class="card-link" href="pages/sentenced-to-be-a-hero-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/k8bh5mvHDx3czHSF56v9lRyulLC.jpg" alt="Sentenced to Be a Hero" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Sentenced to Be a Hero</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="sentenced-to-be-a-hero-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="tokyo-ghoul-s1" data-title="tokyo ghoul" data-genres="animation|action|horror">
+    <a class="card-link" href="pages/tokyo-ghoul-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/mt6ForyKh4JS0v5ho8xhauISidF.jpg" alt="Tokyo Ghoul" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Tokyo Ghoul</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="tokyo-ghoul-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="tokyo-ghoul-s2" data-title="tokyo ghoul" data-genres="animation|action|horror">
+    <a class="card-link" href="pages/tokyo-ghoul-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/mwrErcHQdND2U2vhp9rkFE6wdbd.jpg" alt="Tokyo Ghoul" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Tokyo Ghoul</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="tokyo-ghoul-s2" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="tokyo-ghoul-re-s3" data-title="tokyo ghoul" data-genres="animation|action|horror">
+    <a class="card-link" href="pages/tokyo-ghoul-re-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/nzeAClk7gFTw7FN0ubJNKw7JydI.jpg" alt="Tokyo Ghoul" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Tokyo Ghoul</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="tokyo-ghoul-re-s3" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="tokyo-ghoul-jack" data-title="tokyo ghoul: jack" data-genres="action|fantasy|horror">
+    <a class="card-link" href="pages/tokyo-ghoul-jack.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/Bim98qQ.jpg" alt="Tokyo Ghoul: Jack" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.4</div>
+        
+        <div class="ep-badge">Special</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Tokyo Ghoul: Jack</div>
+        <div class="meta">OVA · Special</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="tokyo-ghoul-jack" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="tokyo-ghoul-pinto" data-title="tokyo ghoul: pinto" data-genres="action|fantasy|horror">
+    <a class="card-link" href="pages/tokyo-ghoul-pinto.html">
+      <div class="thumb-wrap">
+        <img src="https://iili.io/B4Nf1iN.jpg" alt="Tokyo Ghoul: Pinto" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.4</div>
+        
+        <div class="ep-badge">Special</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Tokyo Ghoul: Pinto</div>
+        <div class="meta">OVA · Special</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="tokyo-ghoul-pinto" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+  <div class="card" data-id="konosuba-s1" data-title="konosuba: god's blessing on this wonderful world!" data-genres="animation|adventure|isekai">
+    <a class="card-link" href="pages/konosuba-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://m.media-amazon.com/images/M/MV5BNTQ5NzJjMjgtNDliNC00YTdmLWJiOTQtYWRiMzY4OWU5NGQ3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Konosuba: God's Blessing on This Wonderful World!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.1</div>
+        
+        <div class="ep-badge">EP 10</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Konosuba: God's Blessing on This Wonderful World!</div>
+        <div class="meta">TV Series · EP 10</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="konosuba-s1" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  
+</div>
+
+</main>
+
+<footer class="site-footer">
+  &copy; HindiAnimestuff doesn't host files. We only index third-party links already available online.
+</footer>
+
+<!-- ===== BOTTOM NAV (mobile + desktop) ===== -->
+<nav class="bottom-nav">
+  <a href="index.html" class="bn-item active">
+    <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="trending.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M12 2c1 4-4 5-4 9a4 4 0 0 0 8 0c0-2-1-3-1-3s2 1 2 4a6 6 0 0 1-12 0c0-5 5-6 5-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Trending</span>
+  </a>
+  <button class="bn-item bn-search" id="bnSearchBtn">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Search</span>
+  </button>
+  <a href="favourites.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Favourite</span>
+  </a>
+  <button class="bn-item bn-menu" id="bnMenuBtn">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Menu</span>
+  </button>
+</nav>
+
+<!-- Floating notifications (latest 7 days) -->
+<button type="button" class="notify-fab" id="notifyFab" aria-label="Notifications" title="What's new">
+  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="notify-dot" id="notifyDot"></span>
+</button>
+<div class="notify-panel" id="notifyPanel">
+  <h3>&#128276; What's New</h3>
+  <div id="notifyList"><div class="notify-empty">No recent updates</div></div>
+</div>
+
+<script src="assets/data.js?v=1787764671"></script>
+<script src="assets/notifications-data.js?v=1787764671"></script>
+<script src="assets/notifications.js?v=1787764671"></script>
+<script src="assets/app.js?v=1787764671"></script>
+
+
+<script>
+(function () {
+  var track = document.getElementById('heroCarousel');
+  if (!track) return;
+  var count = track.children.length;
+  var idx = 0;
+  var timer = setInterval(function () {
+    idx = (idx + 1) % count;
+    track.scrollTo({ left: track.clientWidth * idx, behavior: 'smooth' });
+  }, 4500);
+  track.addEventListener('touchstart', function () { clearInterval(timer); }, { passive: true, once: true });
+})();
+</script>
+
+
+</body>
+</html>

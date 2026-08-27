@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — {{ category_label }}{% endblock %}
+{% block content %}
+<div class="page-title">
+  <h1>{{ category_label }}</h1>
+  <p>{{ items|length }} title{{ 's' if items|length != 1 else '' }} available</p>
+</div>
+<div class="genre-bar" id="genreBar"></div>
+{% include "_cards.html" %}
+{% endblock %}

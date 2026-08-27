@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — {{ genre.name }}{% endblock %}
+{% block content %}
+<div class="page-title">
+  <h1>{{ genre.name }}</h1>
+  <p>{{ items|length }} title{{ 's' if items|length != 1 else '' }} available</p>
+</div>
+{% include "_cards.html" %}
+{% endblock %}

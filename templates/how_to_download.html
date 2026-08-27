@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — How To Download{% endblock %}
+{% block content %}
+<div class="page-title">
+  <h1>How To Download</h1>
+  <p>Three quick steps and you're watching.</p>
+</div>
+
+<div class="ip-wrap">
+  <div class="ip-step">
+    <div class="ip-step-num">1</div>
+    <div class="ip-step-body">
+      <h3>Find Your Title</h3>
+      <p>Search or browse to the anime, movie or series you want, open its page, and scroll down to <strong>Download Links</strong>.</p>
+    </div>
+  </div>
+  <div class="ip-step">
+    <div class="ip-step-num">2</div>
+    <div class="ip-step-body">
+      <h3>Pick a Quality</h3>
+      <p>Tap <strong>480p / 720p / 1080p</strong>. Any quality marked "Not Available" isn't ready for that title yet.</p>
+    </div>
+  </div>
+  <div class="ip-step">
+    <div class="ip-step-num">3</div>
+    <div class="ip-step-body">
+      <h3>Download Starts</h3>
+      <p>You'll briefly land on a redirect page, then your download begins automatically. Close any extra ad/tab that pops up and come back here.</p>
+    </div>
+  </div>
+
+  <div class="ip-callout">
+    <div class="ip-callout-icon">&#9888;</div>
+    <div>
+      <h3>Running into a problem?</h3>
+      <p>If a link isn't working, let us know on the <a href="{{ root_prefix }}report.html">Report Link Not Working</a> page.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

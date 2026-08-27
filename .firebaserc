@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "courseskida"
+  },
+  "targets": {
+    "courseskida": {
+      "hosting": {
+        "hindianimestuff": [
+          "hindianimestuff"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

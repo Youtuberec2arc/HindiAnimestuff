@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — Favourites{% endblock %}
+{% block content %}
+<div class="page-title">
+  <h1>My Favourites</h1>
+  <p>Your saved titles (stored only on this device/browser).</p>
+</div>
+<div class="grid" id="favGrid"></div>
+<p class="empty-msg" id="favEmptyMsg" style="display:none;">No favourites yet — tap the ♥ icon on any card to add one.</p>
+{% endblock %}
+{% block scripts %}
+<script src="{{ asset_prefix }}assets/favourites-page.js?v={{ build_version }}"></script>
+{% endblock %}

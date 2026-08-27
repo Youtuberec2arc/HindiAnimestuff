@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block title %}{{ item.title }} — {{ site_name }}{% endblock %}
+{% block content %}
+<div class="detail-view">
+  <div class="dv-topbar">
+    <a class="dv-back" href="{{ root_prefix }}{{ item.category }}.html">&larr; Back to {{ item.category|capitalize }}</a>
+    <button class="dv-share-btn" id="shareBtn">&#9135; Share</button>
+  </div>
+
+  <main class="dv-main">
+    <div class="dv-hero">
+      <div class="dv-poster">
+        {% if item.season %}<div class="dv-poster-fallback">{{ item.season|upper }}</div>{% endif %}
+        <img src="{{ item.poster if item.poster.startswith('http') else root_prefix ~ item.poster }}" alt="{{ item.title }}" onerror="this.style.display='none'">
+      </div>
+      <div class="dv-info">
+        {% if item.season %}<span class="dv-season-tag">{{ item.season }}</span>{% endif %}
+        <h1 class="dv-h1">{{ item.title }}</h1>
+        <div class="dv-rating-row">
+          <div class="dv-rating-badge">★ {{ item.rating }}<sub>/10</sub></div>
+          <div class="dv-genre-tags">
+            {% for g in item.genres %}<span class="dv-genre-tag">{{ g }}</span>{% endfor %}
+          </div>
+        </div>
+        <div class="dv-pill-row">
+          {% if item.quality_tag %}<span class="dv-badge-type">{{ item.quality_tag }}</span>{% endif %}
+          {% if item.episode_tag %}<span class="dv-info-pill dv-status-ok">{{ item.episode_tag|replace("E ", "EP ") }}</span>{% endif %}
+          {% if item.languages %}<span class="dv-info-pill dv-lang">{{ item.languages|join(' · ') }}</span>{% endif %}
+          {% if item.runtime %}<span class="dv-info-pill">{{ item.runtime }}</span>{% endif %}
+        </div>
+        <p class="dv-synopsis">{{ item.description }}</p>
+        <div class="dv-spec-grid">
+          {% if item.runtime %}<div class="dv-spec"><div class="dv-spec-label">Runtime</div><div class="dv-spec-value">{{ item.runtime }}</div></div>{% endif %}
+          {% if item.languages %}<div class="dv-spec"><div class="dv-spec-label">Language</div><div class="dv-spec-value">{{ item.languages|join(', ') }}</div></div>{% endif %}
+          {% if item.subtitle %}<div class="dv-spec"><div class="dv-spec-label">Subtitle</div><div class="dv-spec-value">{{ item.subtitle }}</div></div>{% endif %}
+          {% if item.quality_tag %}<div class="dv-spec"><div class="dv-spec-label">Quality</div><div class="dv-spec-value">{{ item.quality_tag }}</div></div>{% endif %}
+          {% if item.episodes %}<div class="dv-spec"><div class="dv-spec-label">Episodes</div><div class="dv-spec-value">{{ item.episodes }}</div></div>{% endif %}
+          {% if item.type %}<div class="dv-spec"><div class="dv-spec-label">Type</div><div class="dv-spec-value">{{ item.type }}</div></div>{% endif %}
+        </div>
+
+        <div class="dv-download-section">
+          <div class="dv-download-title">Download Links</div>
+          {% if item.category == "anime" and item.available_qualities %}
+          <div class="dv-part-block dv-single-download">
+            <a class="dv-quality-btn dv-main-download-btn" href="{{ root_prefix }}download/{{ item.id }}.html">Download</a>
+          </div>
+          {% elif item.parts %}
+            {% for part in item.parts %}
+            <div class="dv-part-block">
+              <div class="dv-part-label">{{ part.label }}</div>
+              <div class="dv-quality-row">
+                {% for q in ["480p", "720p", "1080p"] %}
+                  {% set link = part.downloads.get(q) %}
+                  {% if link %}
+                  <a class="dv-quality-btn" href="{{ link }}" target="_blank" rel="noopener">{{ q }}<small>Download</small></a>
+                  {% else %}
+                  <div class="dv-quality-btn dv-unavailable">{{ q }}<small>Not Available</small></div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          {% else %}
+          <div class="dv-part-block">
+            <div class="dv-quality-row">
+              {% for q in ["480p", "720p", "1080p"] %}
+                {% set link = item.downloads.get(q) %}
+                {% if link %}
+                <a class="dv-quality-btn" href="{{ link }}" target="_blank" rel="noopener">{{ q }}<small>Download</small></a>
+                {% else %}
+                <div class="dv-quality-btn dv-unavailable">{{ q }}<small>Not Available</small></div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        {% if item.category == "anime" %}
+        <a class="dv-report-btn" href="{{ report_problem_url }}" target="_blank" rel="noopener">&#9888; Report a Problem</a>
+        {% endif %}
+
+        <div class="comment-box" id="commentBox">
+          <h3>💬 Leave a comment</h3>
+          <textarea id="commentText" placeholder="Your comment…" maxlength="500"></textarea>
+          <input type="text" id="commentName" placeholder="Name *" maxlength="40" required>
+          <button type="button" id="commentSubmit">Post comment</button>
+          <div class="comment-list" id="commentList"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var key = "comments_{{ item.id }}";
+  var listEl = document.getElementById("commentList");
+  var nameEl = document.getElementById("commentName");
+  var textEl = document.getElementById("commentText");
+  function load() {
+    var raw = localStorage.getItem(key);
+    var arr = [];
+    try { arr = raw ? JSON.parse(raw) : []; } catch (e) { arr = []; }
+    listEl.innerHTML = arr.map(function (c) {
+      return '<div class="comment-item"><div class="c-name">' + escapeHtml(c.name) +
+        '</div><div class="c-date">' + escapeHtml(c.date || "") + '</div><div>' +
+        escapeHtml(c.text) + '</div></div>';
+    }).join("") || "";
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+  document.getElementById("commentSubmit").addEventListener("click", function () {
+    var name = (nameEl.value || "").trim();
+    var text = (textEl.value || "").trim();
+    if (!name) { alert("Please enter your name."); return; }
+    if (!text) { alert("Please write a comment."); return; }
+    var arr = [];
+    try { arr = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) {}
+    arr.unshift({ name: name, text: text, date: new Date().toLocaleString() });
+    arr = arr.slice(0, 50);
+    localStorage.setItem(key, JSON.stringify(arr));
+    textEl.value = "";
+    load();
+  });
+  load();
+})();
+</script>
+<script>
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var shareText = "\u2022 {{ item.title }}{% if item.season %} {{ item.season }}{% endif %}\n" +
+    "\u2014 Rating: {{ item.rating }}/10\n" +
+    "\u2014 Genres: {{ item.genres|join(' | ') }}\n" +
+    {% if item.quality_tag %}"\u2014 Quality: {{ item.quality_tag }}\n" +{% endif %}
+    {% if item.languages %}"\u2014 Audio Tracks: {{ item.languages|join(' \u00b7 ') }}\n" +{% endif %}
+    {% if item.subtitle %}"\u2014 Subtitle: {{ item.subtitle }}\n" +{% endif %}
+    {% if item.episodes %}"\u2014 Total Episode: {{ item.episodes }}\n" +{% endif %}
+    "\n\u27a5  Download Now: " + window.location.href;
+
+  if (navigator.share) {
+    navigator.share({ title: document.title, text: shareText, url: window.location.href }).catch(function () {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(shareText).then(function () {
+      alert('\u2318 Details copied to clipboard! Share it anywhere.');
+    }).catch(function () {
+      prompt('Copy this text and share it:', shareText);
+    });
+  } else {
+    prompt('Copy this text and share it:', shareText);
+  }
+});
+</script>
+{% endblock %}

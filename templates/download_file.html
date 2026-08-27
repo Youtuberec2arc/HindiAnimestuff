@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block title %}Download File — {{ site_name }}{% endblock %}
+{% block content %}
+<div class="file-dl-page">
+  <div class="file-dl-card">
+    <div class="file-dl-brand">
+      <span class="file-dl-brand-icon">↓</span>
+      <span class="file-dl-brand-name">{{ site_name }}</span>
+    </div>
+
+    <h1 class="file-dl-heading">Download File</h1>
+
+    <div class="file-dl-info">
+      <div class="file-dl-row">
+        <div class="file-dl-icon">📄</div>
+        <div class="file-dl-field">
+          <div class="file-dl-label">FILE NAME</div>
+          <div class="file-dl-value" id="fileName">Loading…</div>
+        </div>
+      </div>
+      <div class="file-dl-row">
+        <div class="file-dl-icon">📦</div>
+        <div class="file-dl-field">
+          <div class="file-dl-label">FILE SIZE</div>
+          <div class="file-dl-value" id="fileSize">Calculating…</div>
+        </div>
+      </div>
+      <div class="file-dl-row">
+        <div class="file-dl-icon">🎬</div>
+        <div class="file-dl-field">
+          <div class="file-dl-label">FILE FORMAT</div>
+          <div class="file-dl-value">video/mkv</div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="file-dl-btn" id="downloadBtn" disabled>
+      ↓ Download Now
+    </button>
+
+    <p class="file-dl-hint" id="fileHint">Preparing secure download link…</p>
+  </div>
+
+  <a class="file-dl-telegram" href="{{ telegram_join_url }}" target="_blank" rel="noopener">✈ Join Telegram</a>
+
+  {# Ad slot ready for future networks #}
+  <div class="ad-slot ad-slot-file" data-ad-network="placeholder" data-ad-enabled="false" aria-hidden="true"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ asset_prefix }}assets/download-data.js?v={{ build_version }}"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var sid = params.get("sid") || "";
+  var ep = params.get("ep") || "";
+  var q = params.get("q") || "";
+
+  var nameEl = document.getElementById("fileName");
+  var sizeEl = document.getElementById("fileSize");
+  var btn = document.getElementById("downloadBtn");
+  var hint = document.getElementById("fileHint");
+
+  function formatBytes(n) {
+    if (!n || n < 0) return "Unknown";
+    var u = ["B", "KB", "MB", "GB", "TB"];
+    var i = 0;
+    var v = n;
+    while (v >= 1024 && i < u.length - 1) { v /= 1024; i++; }
+    return v.toFixed(i === 0 ? 0 : 2) + " " + u[i];
+  }
+
+  function decodeName(nameParam) {
+    try { return decodeURIComponent(nameParam); } catch (e) { return nameParam; }
+  }
+
+  var entry = null;
+  if (window.DOWNLOAD_MAP && window.DOWNLOAD_MAP[sid] && window.DOWNLOAD_MAP[sid][ep]) {
+    entry = window.DOWNLOAD_MAP[sid][ep][q] || null;
+  }
+
+  if (!entry || !entry.url) {
+    nameEl.textContent = "File not found";
+    sizeEl.textContent = "—";
+    hint.textContent = "This download link is unavailable or has expired. Please go back and try another quality.";
+    return;
+  }
+
+  var displayName = entry.name || "download.mkv";
+  nameEl.textContent = displayName;
+  hint.textContent = "Tap Download Now to start. Link is temporary and may expire.";
+
+  // Try HEAD for size (worker may support CORS)
+  var sizeFetched = false;
+  try {
+    fetch(entry.url, { method: "HEAD", mode: "cors" })
+      .then(function (res) {
+        var cl = res.headers.get("content-length") || res.headers.get("Content-Length");
+        if (cl) {
+          sizeEl.textContent = formatBytes(parseInt(cl, 10));
+          sizeFetched = true;
+        } else if (entry.size) {
+          sizeEl.textContent = formatBytes(entry.size);
+        } else {
+          sizeEl.textContent = "See client after start";
+        }
+      })
+      .catch(function () {
+        if (entry.size) sizeEl.textContent = formatBytes(entry.size);
+        else sizeEl.textContent = "See client after start";
+      });
+  } catch (e) {
+    if (entry.size) sizeEl.textContent = formatBytes(entry.size);
+    else sizeEl.textContent = "See client after start";
+  }
+
+  btn.disabled = false;
+  btn.addEventListener("click", function () {
+    btn.disabled = true;
+    btn.textContent = "Starting…";
+    hint.textContent = "Your download should begin shortly.";
+    // Navigate to worker URL only on user click — URL not exposed as visible href
+    var a = document.createElement("a");
+    a.href = entry.url;
+    a.rel = "noopener";
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () {
+      btn.disabled = false;
+      btn.textContent = "↓ Download Now";
+      try { document.body.removeChild(a); } catch (e) {}
+    }, 2000);
+  });
+})();
+</script>
+{% endblock %}

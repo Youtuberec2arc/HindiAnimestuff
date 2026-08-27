@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — A-Z Anime List{% endblock %}
+{% block content %}
+<div class="page-title">
+  <h1>A-Z Anime List</h1>
+  <p>Tap a letter to see anime titles starting with it.</p>
+</div>
+<div class="az-grid">
+  {% for letter in letters %}
+  <a class="az-tile" href="{{ root_prefix }}pages_az/{{ letter|lower }}.html">{{ letter }}</a>
+  {% endfor %}
+</div>
+{% endblock %}

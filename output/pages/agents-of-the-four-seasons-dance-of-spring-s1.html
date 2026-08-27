@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agents of the Four Seasons: Dance of Spring — HindiAnimestuff</title>
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css?v=1787764671">
+</head>
+<body data-root="../">
+
+<!-- ===== TOP HEADER ===== -->
+<header class="site-header">
+  <button class="icon-btn" id="menuBtn" aria-label="Menu">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+
+  <a href="../index.html" class="brand-logo" aria-label="HindiAnimestuff">
+    <img src="../assets/logo.svg" alt="logo">
+  </a>
+
+  <button class="icon-btn" id="searchBtn" aria-label="Search">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</header>
+
+<!-- ===== SEARCH OVERLAY ===== -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-bar">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input type="text" id="searchInput" placeholder="Search titles..." autocomplete="off">
+    <button class="icon-btn" id="searchCloseBtn" aria-label="Close">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- ===== SIDE DRAWER MENU ===== -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<nav class="drawer" id="drawer">
+  <div class="drawer-head">
+    <img src="../assets/logo.svg" alt="logo" class="drawer-logo">
+    <button class="icon-btn" id="drawerCloseBtn" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <a href="../index.html" class="drawer-link ">Home</a>
+  <a href="../trending.html" class="drawer-link ">Trending</a>
+  <a href="../browse-az.html" class="drawer-link ">A-Z Anime List</a>
+  <a href="../series.html" class="drawer-link ">Series</a>
+  <a href="../movies.html" class="drawer-link ">Movies</a>
+  <a href="../how-to-download.html" class="drawer-link ">How To Download</a>
+  <a href="../report.html" class="drawer-link ">Report Link Not Working</a>
+
+  <a href="https://t.me/+ZY6u10TE0PdjZmM1" target="_blank" rel="noopener" class="drawer-tg-bar">
+    <svg class="drawer-tg-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+    <span class="drawer-tg-text">
+      <small>JOIN US ON</small>
+      <strong>Join Telegram</strong>
+    </span>
+    <span class="drawer-tg-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+      Join
+    </span>
+  </a>
+
+  
+  <div class="drawer-section-label">Browse by Genre</div>
+  <a href="../browse-genres.html" class="drawer-link ">All Genres</a>
+  <div class="drawer-genre-list">
+    
+    <a href="../genres/action.html" class="drawer-genre-chip">Action</a>
+    
+    <a href="../genres/action-and-adventure.html" class="drawer-genre-chip">Action & Adventure</a>
+    
+    <a href="../genres/adult.html" class="drawer-genre-chip">Adult</a>
+    
+    <a href="../genres/adventure.html" class="drawer-genre-chip">Adventure</a>
+    
+    <a href="../genres/animation.html" class="drawer-genre-chip">Animation</a>
+    
+    <a href="../genres/anime.html" class="drawer-genre-chip">Anime</a>
+    
+    <a href="../genres/comedy.html" class="drawer-genre-chip">Comedy</a>
+    
+    <a href="../genres/crime.html" class="drawer-genre-chip">Crime</a>
+    
+    <a href="../genres/drama.html" class="drawer-genre-chip">Drama</a>
+    
+    <a href="../genres/ecchi.html" class="drawer-genre-chip">Ecchi</a>
+    
+    <a href="../genres/family.html" class="drawer-genre-chip">Family</a>
+    
+    <a href="../genres/fantasy.html" class="drawer-genre-chip">Fantasy</a>
+    
+    <a href="../genres/harem.html" class="drawer-genre-chip">Harem</a>
+    
+    <a href="../genres/hentai.html" class="drawer-genre-chip">Hentai</a>
+    
+    <a href="../genres/historical.html" class="drawer-genre-chip">Historical</a>
+    
+    <a href="../genres/history.html" class="drawer-genre-chip">History</a>
+    
+    <a href="../genres/horror.html" class="drawer-genre-chip">Horror</a>
+    
+    <a href="../genres/indian-anime.html" class="drawer-genre-chip">Indian Anime</a>
+    
+    <a href="../genres/isekai.html" class="drawer-genre-chip">Isekai</a>
+    
+    <a href="../genres/mystery.html" class="drawer-genre-chip">Mystery</a>
+    
+    <a href="../genres/romance.html" class="drawer-genre-chip">Romance</a>
+    
+    <a href="../genres/sci-fi.html" class="drawer-genre-chip">Sci-Fi</a>
+    
+    <a href="../genres/sci-fi-and-fantasy.html" class="drawer-genre-chip">Sci-Fi & Fantasy</a>
+    
+    <a href="../genres/science-fiction.html" class="drawer-genre-chip">Science Fiction</a>
+    
+    <a href="../genres/seinen.html" class="drawer-genre-chip">Seinen</a>
+    
+    <a href="../genres/shounen.html" class="drawer-genre-chip">Shounen</a>
+    
+    <a href="../genres/slice-of-life.html" class="drawer-genre-chip">Slice of Life</a>
+    
+    <a href="../genres/sport.html" class="drawer-genre-chip">Sport</a>
+    
+    <a href="../genres/supernatural.html" class="drawer-genre-chip">Supernatural</a>
+    
+    <a href="../genres/supernatural-horror.html" class="drawer-genre-chip">Supernatural Horror</a>
+    
+    <a href="../genres/survival.html" class="drawer-genre-chip">Survival</a>
+    
+    <a href="../genres/suspense.html" class="drawer-genre-chip">Suspense</a>
+    
+    <a href="../genres/thriller.html" class="drawer-genre-chip">Thriller</a>
+    
+    <a href="../genres/war.html" class="drawer-genre-chip">War</a>
+    
+  </div>
+  
+</nav>
+
+<main class="page-main">
+
+<div class="detail-view">
+  <div class="dv-topbar">
+    <a class="dv-back" href="../anime.html">&larr; Back to Anime</a>
+    <button class="dv-share-btn" id="shareBtn">&#9135; Share</button>
+  </div>
+
+  <main class="dv-main">
+    <div class="dv-hero">
+      <div class="dv-poster">
+        <div class="dv-poster-fallback">SEASON 1</div>
+        <img src="https://image.tmdb.org/t/p/original/zbzbUDLO3iTAuXDmoqtpOsrtLPi.jpg" alt="Agents of the Four Seasons: Dance of Spring" onerror="this.style.display='none'">
+      </div>
+      <div class="dv-info">
+        <span class="dv-season-tag">Season 1</span>
+        <h1 class="dv-h1">Agents of the Four Seasons: Dance of Spring</h1>
+        <div class="dv-rating-row">
+          <div class="dv-rating-badge">★ 7.8<sub>/10</sub></div>
+          <div class="dv-genre-tags">
+            <span class="dv-genre-tag">Drama</span><span class="dv-genre-tag">Fantasy</span><span class="dv-genre-tag">Romance</span>
+          </div>
+        </div>
+        <div class="dv-pill-row">
+          <span class="dv-badge-type">1080p FHD | 720p HD | 480p WEB-DL</span>
+          <span class="dv-info-pill dv-status-ok">EP 14</span>
+          <span class="dv-info-pill dv-lang">Japanese · English · Tamil · Telugu · Hindi</span>
+          <span class="dv-info-pill">24min</span>
+        </div>
+        <p class="dv-synopsis">The lives of the Agents, divine operatives who manage the running of the four seasons of nature.</p>
+        <div class="dv-spec-grid">
+          <div class="dv-spec"><div class="dv-spec-label">Runtime</div><div class="dv-spec-value">24min</div></div>
+          <div class="dv-spec"><div class="dv-spec-label">Language</div><div class="dv-spec-value">Japanese, English, Tamil, Telugu, Hindi</div></div>
+          <div class="dv-spec"><div class="dv-spec-label">Subtitle</div><div class="dv-spec-value">English-Sign + English Dialogue + Dubtitle {ASS}</div></div>
+          <div class="dv-spec"><div class="dv-spec-label">Quality</div><div class="dv-spec-value">1080p FHD | 720p HD | 480p WEB-DL</div></div>
+          <div class="dv-spec"><div class="dv-spec-label">Episodes</div><div class="dv-spec-value">14</div></div>
+          <div class="dv-spec"><div class="dv-spec-label">Type</div><div class="dv-spec-value">TV Series</div></div>
+        </div>
+
+        <div class="dv-download-section">
+          <div class="dv-download-title">Download Links</div>
+          
+          <div class="dv-part-block dv-single-download">
+            <a class="dv-quality-btn dv-main-download-btn" href="../download/agents-of-the-four-seasons-dance-of-spring-s1.html">Download</a>
+          </div>
+          
+        </div>
+
+        
+        <a class="dv-report-btn" href="https://t.me/+xo_0Z-JlYIU5NDg1" target="_blank" rel="noopener">&#9888; Report a Problem</a>
+        
+
+        <div class="comment-box" id="commentBox">
+          <h3>💬 Leave a comment</h3>
+          <textarea id="commentText" placeholder="Your comment…" maxlength="500"></textarea>
+          <input type="text" id="commentName" placeholder="Name *" maxlength="40" required>
+          <button type="button" id="commentSubmit">Post comment</button>
+          <div class="comment-list" id="commentList"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  &copy; HindiAnimestuff doesn't host files. We only index third-party links already available online.
+</footer>
+
+<!-- ===== BOTTOM NAV (mobile + desktop) ===== -->
+<nav class="bottom-nav">
+  <a href="../index.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="../trending.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M12 2c1 4-4 5-4 9a4 4 0 0 0 8 0c0-2-1-3-1-3s2 1 2 4a6 6 0 0 1-12 0c0-5 5-6 5-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Trending</span>
+  </a>
+  <button class="bn-item bn-search" id="bnSearchBtn">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Search</span>
+  </button>
+  <a href="../favourites.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Favourite</span>
+  </a>
+  <button class="bn-item bn-menu" id="bnMenuBtn">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Menu</span>
+  </button>
+</nav>
+
+<!-- Floating notifications (latest 7 days) -->
+<button type="button" class="notify-fab" id="notifyFab" aria-label="Notifications" title="What's new">
+  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="notify-dot" id="notifyDot"></span>
+</button>
+<div class="notify-panel" id="notifyPanel">
+  <h3>&#128276; What's New</h3>
+  <div id="notifyList"><div class="notify-empty">No recent updates</div></div>
+</div>
+
+<script src="../assets/data.js?v=1787764671"></script>
+<script src="../assets/notifications-data.js?v=1787764671"></script>
+<script src="../assets/notifications.js?v=1787764671"></script>
+<script src="../assets/app.js?v=1787764671"></script>
+
+<script>
+(function () {
+  var key = "comments_agents-of-the-four-seasons-dance-of-spring-s1";
+  var listEl = document.getElementById("commentList");
+  var nameEl = document.getElementById("commentName");
+  var textEl = document.getElementById("commentText");
+  function load() {
+    var raw = localStorage.getItem(key);
+    var arr = [];
+    try { arr = raw ? JSON.parse(raw) : []; } catch (e) { arr = []; }
+    listEl.innerHTML = arr.map(function (c) {
+      return '<div class="comment-item"><div class="c-name">' + escapeHtml(c.name) +
+        '</div><div class="c-date">' + escapeHtml(c.date || "") + '</div><div>' +
+        escapeHtml(c.text) + '</div></div>';
+    }).join("") || "";
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+  document.getElementById("commentSubmit").addEventListener("click", function () {
+    var name = (nameEl.value || "").trim();
+    var text = (textEl.value || "").trim();
+    if (!name) { alert("Please enter your name."); return; }
+    if (!text) { alert("Please write a comment."); return; }
+    var arr = [];
+    try { arr = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) {}
+    arr.unshift({ name: name, text: text, date: new Date().toLocaleString() });
+    arr = arr.slice(0, 50);
+    localStorage.setItem(key, JSON.stringify(arr));
+    textEl.value = "";
+    load();
+  });
+  load();
+})();
+</script>
+<script>
+document.getElementById('shareBtn').addEventListener('click', function () {
+  var shareText = "\u2022 Agents of the Four Seasons: Dance of Spring Season 1\n" +
+    "\u2014 Rating: 7.8/10\n" +
+    "\u2014 Genres: Drama | Fantasy | Romance\n" +
+    "\u2014 Quality: 1080p FHD | 720p HD | 480p WEB-DL\n" +
+    "\u2014 Audio Tracks: Japanese · English · Tamil · Telugu · Hindi\n" +
+    "\u2014 Subtitle: English-Sign + English Dialogue + Dubtitle {ASS}\n" +
+    "\u2014 Total Episode: 14\n" +
+    "\n\u27a5  Download Now: " + window.location.href;
+
+  if (navigator.share) {
+    navigator.share({ title: document.title, text: shareText, url: window.location.href }).catch(function () {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(shareText).then(function () {
+      alert('\u2318 Details copied to clipboard! Share it anywhere.');
+    }).catch(function () {
+      prompt('Copy this text and share it:', shareText);
+    });
+  } else {
+    prompt('Copy this text and share it:', shareText);
+  }
+});
+</script>
+
+</body>
+</html>

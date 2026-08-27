@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — Home{% endblock %}
+{% block content %}
+
+{% if hero_items %}
+<section class="hero-carousel" id="heroCarousel">
+  {% for hero_item in hero_items %}
+  <div class="hero-slide">
+    <div class="hero-banner" style="background-image:url('{{ hero_item.poster }}')">
+      <div class="hero-fade"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">{{ hero_item.title }}</h1>
+        <p class="hero-desc">{{ hero_item.description|truncate(150) }}</p>
+        <div class="hero-actions">
+          <a class="hero-btn hero-btn-watch" href="{{ root_prefix }}pages/{{ hero_item.id }}.html">☣ Download Now</a>
+          <a class="hero-btn hero-btn-details" href="{{ root_prefix }}pages/{{ hero_item.id }}.html">ⓘ Details</a>
+        </div>
+        <p class="hero-note">Download servers are stable and running on faster infrastructure. Thanks for your patience!</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if top_anime_movies %}
+<div class="section-head"><h2>Anime Movies</h2></div>
+<div class="grid strip-grid">
+  {% for item in top_anime_movies %}
+  <div class="card">
+    <a class="card-link" href="{{ root_prefix }}pages/{{ item.id }}.html">
+      <div class="thumb-wrap">
+        <img src="{{ item.poster if item.poster.startswith('http') else root_prefix ~ item.poster }}" alt="{{ item.title }}" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ {{ item.rating }}</div>
+        {% if item.episode_tag %}<div class="ep-badge">{{ item.episode_tag|replace("E ", "EP ") }}</div>{% endif %}
+      </div>
+      <div class="info">
+        <div class="title">{{ item.title }}</div>
+        <div class="meta">{{ item.type }}{% if item.episode_tag %} · {{ item.episode_tag|replace("E ", "EP ") }}{% endif %}</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="{{ item.id }}" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div class="section-head"><h2>Latest Episodes</h2></div>
+<div class="genre-bar" id="genreBar"></div>
+{% include "_cards.html" %}
+{% endblock %}
+{% block scripts %}
+{% if hero_items|length > 1 %}
+<script>
+(function () {
+  var track = document.getElementById('heroCarousel');
+  if (!track) return;
+  var count = track.children.length;
+  var idx = 0;
+  var timer = setInterval(function () {
+    idx = (idx + 1) % count;
+    track.scrollTo({ left: track.clientWidth * idx, behavior: 'smooth' });
+  }, 4500);
+  track.addEventListener('touchstart', function () { clearInterval(timer); }, { passive: true, once: true });
+})();
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — Browse by Genre{% endblock %}
+{% block content %}
+<div class="page-title">
+  <h1>Browse by Genre</h1>
+  <p>Tap a genre to see every title tagged with it, across Anime, Movies and Series.</p>
+</div>
+<div class="genre-grid">
+  {% for g in all_genres %}
+  <a class="genre-tile" href="{{ root_prefix }}genres/{{ g.slug }}.html">{{ g.name }}</a>
+  {% endfor %}
+</div>
+{% endblock %}

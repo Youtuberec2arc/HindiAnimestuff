@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — Report Link Not Working{% endblock %}
+{% block content %}
+<div class="page-title">
+  <h1>Report Link Not Working</h1>
+  <p>Broken download? Missing title? Tell us on Telegram — it's the fastest way to reach us.</p>
+</div>
+
+<div class="ip-wrap">
+  <a href="{{ telegram_url }}" target="_blank" rel="noopener" class="ip-tg-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+    Join Telegram Request Chat
+  </a>
+
+  <div class="ip-check-list">
+    <div class="ip-check-item"><span>&#10003;</span> Request an anime, movie or series</div>
+    <div class="ip-check-item"><span>&#10003;</span> Request a Hindi dub</div>
+    <div class="ip-check-item"><span>&#10003;</span> Report a broken or expired download link</div>
+    <div class="ip-check-item"><span>&#10003;</span> Ask us anything directly</div>
+  </div>
+
+  <p class="ip-note">We usually reply within a day. Please mention the exact title, season and quality that's affected so we can fix it fast.</p>
+</div>
+{% endblock %}

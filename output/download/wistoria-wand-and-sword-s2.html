@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Wistoria: Wand and Sword — HindiAnimestuff</title>
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css?v=1787764671">
+</head>
+<body data-root="../">
+
+<!-- ===== TOP HEADER ===== -->
+<header class="site-header">
+  <button class="icon-btn" id="menuBtn" aria-label="Menu">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+
+  <a href="../index.html" class="brand-logo" aria-label="HindiAnimestuff">
+    <img src="../assets/logo.svg" alt="logo">
+  </a>
+
+  <button class="icon-btn" id="searchBtn" aria-label="Search">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</header>
+
+<!-- ===== SEARCH OVERLAY ===== -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-bar">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input type="text" id="searchInput" placeholder="Search titles..." autocomplete="off">
+    <button class="icon-btn" id="searchCloseBtn" aria-label="Close">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- ===== SIDE DRAWER MENU ===== -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<nav class="drawer" id="drawer">
+  <div class="drawer-head">
+    <img src="../assets/logo.svg" alt="logo" class="drawer-logo">
+    <button class="icon-btn" id="drawerCloseBtn" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <a href="../index.html" class="drawer-link ">Home</a>
+  <a href="../trending.html" class="drawer-link ">Trending</a>
+  <a href="../browse-az.html" class="drawer-link ">A-Z Anime List</a>
+  <a href="../series.html" class="drawer-link ">Series</a>
+  <a href="../movies.html" class="drawer-link ">Movies</a>
+  <a href="../how-to-download.html" class="drawer-link ">How To Download</a>
+  <a href="../report.html" class="drawer-link ">Report Link Not Working</a>
+
+  <a href="https://t.me/+ZY6u10TE0PdjZmM1" target="_blank" rel="noopener" class="drawer-tg-bar">
+    <svg class="drawer-tg-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+    <span class="drawer-tg-text">
+      <small>JOIN US ON</small>
+      <strong>Join Telegram</strong>
+    </span>
+    <span class="drawer-tg-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+      Join
+    </span>
+  </a>
+
+  
+  <div class="drawer-section-label">Browse by Genre</div>
+  <a href="../browse-genres.html" class="drawer-link ">All Genres</a>
+  <div class="drawer-genre-list">
+    
+    <a href="../genres/action.html" class="drawer-genre-chip">Action</a>
+    
+    <a href="../genres/action-and-adventure.html" class="drawer-genre-chip">Action & Adventure</a>
+    
+    <a href="../genres/adult.html" class="drawer-genre-chip">Adult</a>
+    
+    <a href="../genres/adventure.html" class="drawer-genre-chip">Adventure</a>
+    
+    <a href="../genres/animation.html" class="drawer-genre-chip">Animation</a>
+    
+    <a href="../genres/anime.html" class="drawer-genre-chip">Anime</a>
+    
+    <a href="../genres/comedy.html" class="drawer-genre-chip">Comedy</a>
+    
+    <a href="../genres/crime.html" class="drawer-genre-chip">Crime</a>
+    
+    <a href="../genres/drama.html" class="drawer-genre-chip">Drama</a>
+    
+    <a href="../genres/ecchi.html" class="drawer-genre-chip">Ecchi</a>
+    
+    <a href="../genres/family.html" class="drawer-genre-chip">Family</a>
+    
+    <a href="../genres/fantasy.html" class="drawer-genre-chip">Fantasy</a>
+    
+    <a href="../genres/harem.html" class="drawer-genre-chip">Harem</a>
+    
+    <a href="../genres/hentai.html" class="drawer-genre-chip">Hentai</a>
+    
+    <a href="../genres/historical.html" class="drawer-genre-chip">Historical</a>
+    
+    <a href="../genres/history.html" class="drawer-genre-chip">History</a>
+    
+    <a href="../genres/horror.html" class="drawer-genre-chip">Horror</a>
+    
+    <a href="../genres/indian-anime.html" class="drawer-genre-chip">Indian Anime</a>
+    
+    <a href="../genres/isekai.html" class="drawer-genre-chip">Isekai</a>
+    
+    <a href="../genres/mystery.html" class="drawer-genre-chip">Mystery</a>
+    
+    <a href="../genres/romance.html" class="drawer-genre-chip">Romance</a>
+    
+    <a href="../genres/sci-fi.html" class="drawer-genre-chip">Sci-Fi</a>
+    
+    <a href="../genres/sci-fi-and-fantasy.html" class="drawer-genre-chip">Sci-Fi & Fantasy</a>
+    
+    <a href="../genres/science-fiction.html" class="drawer-genre-chip">Science Fiction</a>
+    
+    <a href="../genres/seinen.html" class="drawer-genre-chip">Seinen</a>
+    
+    <a href="../genres/shounen.html" class="drawer-genre-chip">Shounen</a>
+    
+    <a href="../genres/slice-of-life.html" class="drawer-genre-chip">Slice of Life</a>
+    
+    <a href="../genres/sport.html" class="drawer-genre-chip">Sport</a>
+    
+    <a href="../genres/supernatural.html" class="drawer-genre-chip">Supernatural</a>
+    
+    <a href="../genres/supernatural-horror.html" class="drawer-genre-chip">Supernatural Horror</a>
+    
+    <a href="../genres/survival.html" class="drawer-genre-chip">Survival</a>
+    
+    <a href="../genres/suspense.html" class="drawer-genre-chip">Suspense</a>
+    
+    <a href="../genres/thriller.html" class="drawer-genre-chip">Thriller</a>
+    
+    <a href="../genres/war.html" class="drawer-genre-chip">War</a>
+    
+  </div>
+  
+</nav>
+
+<main class="page-main">
+
+<div class="dl-page">
+  <div class="dl-topbar">
+    <a class="dl-back" href="../pages/wistoria-wand-and-sword-s2.html">&larr; Back to Info</a>
+  </div>
+
+  <div class="dl-header">
+    <div class="dl-poster">
+      <img src="https://image.tmdb.org/t/p/original/hM00JrQlrfI0wTSweYDMLUMcv8u.jpg" alt="Wistoria: Wand and Sword" onerror="this.style.display='none'">
+    </div>
+    <div class="dl-header-info">
+      <h1 class="dl-title">Wistoria: Wand and Sword</h1>
+      <span class="dl-season-badge">Season 2</span>
+      <div class="dl-meta">
+        <span>1080p FHD | 720p HD | 480p WEB-DL</span>
+        <span>Japanese · English · Tamil · Telugu · Hindi</span>
+        <span>12 Episodes</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <section class="dl-section">
+    <h2 class="dl-section-title">Seasons</h2>
+    <div class="dl-season-row">
+      
+      <a class="dl-season-chip " href="../download/wistoria-wand-and-sword-s1.html">Season 1</a>
+      
+      <a class="dl-season-chip active" href="../download/wistoria-wand-and-sword-s2.html">Season 2</a>
+      
+    </div>
+  </section>
+  
+
+  <section class="dl-section">
+    <h2 class="dl-section-title">Episodes</h2>
+    <div class="dl-episode-list">
+      
+      
+      <div class="dl-episode-card" id="ep-01">
+        <div class="dl-ep-label">Episode 01</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=01&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=01&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=01&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-02">
+        <div class="dl-ep-label">Episode 02</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=02&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=02&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=02&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-03">
+        <div class="dl-ep-label">Episode 03</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=03&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=03&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=03&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-04">
+        <div class="dl-ep-label">Episode 04</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=04&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=04&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=04&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-05">
+        <div class="dl-ep-label">Episode 05</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=05&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=05&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=05&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-06">
+        <div class="dl-ep-label">Episode 06</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=06&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=06&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=06&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-07">
+        <div class="dl-ep-label">Episode 07</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=07&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=07&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=07&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-08">
+        <div class="dl-ep-label">Episode 08</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=08&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=08&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=08&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-09">
+        <div class="dl-ep-label">Episode 09</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=09&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=09&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=09&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-10">
+        <div class="dl-ep-label">Episode 10</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=10&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=10&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=10&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-11">
+        <div class="dl-ep-label">Episode 11</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=11&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=11&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=11&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-12">
+        <div class="dl-ep-label">Episode 12</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=12&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=12&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=wistoria-wand-and-sword-s2&ep=12&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  
+  <section class="dl-section">
+    <h2 class="dl-section-title">♥ You May Also Like</h2>
+    <div class="dl-related-grid">
+      
+      <a class="dl-related-card" href="../pages/jujutsu-kaisen-s2.html">
+        <img src="https://i.imgur.com/24Sdguu.jpg" alt="Jujutsu Kaisen" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Jujutsu Kaisen</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/vinland-saga-s1.html">
+        <img src="https://i.imgur.com/tXnBhR1.jpg" alt="Vinland Saga" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Vinland Saga</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/vinland-saga-s2.html">
+        <img src="https://i.imgur.com/NR6ybnc.jpg" alt="Vinland Saga" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Vinland Saga</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/jujutsu-kaisen-s1.html">
+        <img src="https://image.tmdb.org/t/p/original/mJVUZpPR4BdZzLWyP51h8pOU1RO.jpg" alt="Jujutsu Kaisen" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Jujutsu Kaisen</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/naruto-s1.html">
+        <img src="https://image.tmdb.org/t/p/w780/xppeysfvDKVx775MFuH8Z9BlpMk.jpg" alt="Naruto" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Naruto</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/naruto-s2.html">
+        <img src="https://i.imgur.com/cJrfs3y.jpg" alt="Naruto" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Naruto</span>
+      </a>
+      
+    </div>
+  </section>
+  
+
+  <div class="dl-actions">
+    <a class="dl-telegram-btn" href="https://t.me/+ZY6u10TE0PdjZmM1" target="_blank" rel="noopener">✈ Join Telegram</a>
+    <a class="dl-report-btn" href="https://t.me/+xo_0Z-JlYIU5NDg1" target="_blank" rel="noopener">⚠ Report a Problem</a>
+  </div>
+
+  
+  <div class="ad-slot ad-slot-download" data-ad-network="placeholder" data-ad-enabled="false" aria-hidden="true"></div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  &copy; HindiAnimestuff doesn't host files. We only index third-party links already available online.
+</footer>
+
+<!-- ===== BOTTOM NAV (mobile + desktop) ===== -->
+<nav class="bottom-nav">
+  <a href="../index.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="../trending.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M12 2c1 4-4 5-4 9a4 4 0 0 0 8 0c0-2-1-3-1-3s2 1 2 4a6 6 0 0 1-12 0c0-5 5-6 5-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Trending</span>
+  </a>
+  <button class="bn-item bn-search" id="bnSearchBtn">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Search</span>
+  </button>
+  <a href="../favourites.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Favourite</span>
+  </a>
+  <button class="bn-item bn-menu" id="bnMenuBtn">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Menu</span>
+  </button>
+</nav>
+
+<!-- Floating notifications (latest 7 days) -->
+<button type="button" class="notify-fab" id="notifyFab" aria-label="Notifications" title="What's new">
+  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="notify-dot" id="notifyDot"></span>
+</button>
+<div class="notify-panel" id="notifyPanel">
+  <h3>&#128276; What's New</h3>
+  <div id="notifyList"><div class="notify-empty">No recent updates</div></div>
+</div>
+
+<script src="../assets/data.js?v=1787764671"></script>
+<script src="../assets/notifications-data.js?v=1787764671"></script>
+<script src="../assets/notifications.js?v=1787764671"></script>
+<script src="../assets/app.js?v=1787764671"></script>
+
+</body>
+</html>

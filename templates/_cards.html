@@ -1,0 +1,25 @@
+<div class="grid" id="cardGrid">
+  {% for item in items %}
+  <div class="card" data-id="{{ item.id }}" data-title="{{ item.title|lower }}" data-genres="{{ item.genres|join('|')|lower }}">
+    <a class="card-link" href="{{ root_prefix }}pages/{{ item.id }}.html">
+      <div class="thumb-wrap">
+        <img src="{{ item.poster if item.poster.startswith('http') else root_prefix ~ item.poster }}" alt="{{ item.title }}" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ {{ item.rating }}</div>
+        {% if item.episode_tag %}
+        <div class="ep-badge">{{ item.episode_tag|replace("E ", "EP ") }}</div>
+        {% endif %}
+      </div>
+      <div class="info">
+        <div class="title">{{ item.title }}</div>
+        <div class="meta">{{ item.type }}{% if item.episode_tag %} · {{ item.episode_tag|replace("E ", "EP ") }}{% endif %}</div>
+      </div>
+    </a>
+    <button class="fav-btn" data-fav-id="{{ item.id }}" aria-label="Add to favourites">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  {% else %}
+  <p class="empty-msg">No titles found.</p>
+  {% endfor %}
+</div>

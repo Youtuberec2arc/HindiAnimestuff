@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }} — "{{ letter }}" Anime{% endblock %}
+{% block content %}
+<div class="page-title">
+  <h1>Anime — "{{ letter }}"</h1>
+  <p>{{ items|length }} title{{ 's' if items|length != 1 else '' }}</p>
+</div>
+<div class="az-strip">
+  {% for l in all_letters %}
+  <a class="az-strip-item {{ 'active' if l == letter else '' }}" href="{{ root_prefix }}pages_az/{{ l|lower }}.html">{{ l }}</a>
+  {% endfor %}
+</div>
+{% include "_cards.html" %}
+{% endblock %}
