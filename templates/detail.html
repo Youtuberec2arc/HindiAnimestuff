@@ -4,7 +4,12 @@
 <div class="detail-view">
   <div class="dv-topbar">
     <a class="dv-back" href="{{ root_prefix }}{{ item.category }}.html">&larr; Back to {{ item.category|capitalize }}</a>
-    <button class="dv-share-btn" id="shareBtn">&#9135; Share</button>
+    <button class="dv-share-btn" id="shareBtn">
+      <div class="svg-wrapper-1"><div class="svg-wrapper">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.454.547-.679.045L12 14l6-8-8 6-8.054-2.685z"/></svg>
+      </div></div>
+      <span>Share</span>
+    </button>
   </div>
 
   <main class="dv-main">
@@ -42,7 +47,10 @@
           <div class="dv-download-title">Download Links</div>
           {% if item.category == "anime" and item.available_qualities %}
           <div class="dv-part-block dv-single-download">
-            <a class="dv-quality-btn dv-main-download-btn" href="{{ root_prefix }}download/{{ item.id }}.html">Download</a>
+            <a class="dv-main-download-btn" href="{{ root_prefix }}download/{{ item.id }}.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
           </div>
           {% elif item.parts %}
             {% for part in item.parts %}
@@ -85,7 +93,7 @@
           <textarea id="commentText" placeholder="Your comment…" maxlength="500"></textarea>
           <input type="text" id="commentName" placeholder="Name *" maxlength="40" required>
           <button type="button" id="commentSubmit">Post comment</button>
-          <div class="comment-list" id="commentList"></div>
+          <div class="comment-list" id="commentList"><div class="comment-loading">Loading comments…</div></div>
         </div>
       </div>
     </div>
@@ -93,38 +101,111 @@
 </div>
 {% endblock %}
 {% block scripts %}
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 (function () {
-  var key = "comments_{{ item.id }}";
+  var firebaseConfig = {
+    apiKey: "AIzaSyDYkDycquqaHAneuxKRa7R2O31gmrm2NPc",
+    authDomain: "courseskida.firebaseapp.com",
+    projectId: "courseskida",
+    storageBucket: "courseskida.firebasestorage.app",
+    messagingSenderId: "772322063983",
+    appId: "1:772322063983:web:d93e99cc24a3e439cf3f9a"
+  };
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+
+  var EMAILJS_PUBLIC_KEY = "56w3ancDyfmhbnEV8";
+  var EMAILJS_SERVICE_ID = "service_fmdbxah";
+  var EMAILJS_TEMPLATE_ID = "template_yfidj4o";
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  var pageId = "{{ item.id }}";
+  var pageTitle = "{{ item.title }}{% if item.season %} {{ item.season }}{% endif %}";
+  var pageUrl = window.location.href;
   var listEl = document.getElementById("commentList");
   var nameEl = document.getElementById("commentName");
   var textEl = document.getElementById("commentText");
-  function load() {
-    var raw = localStorage.getItem(key);
-    var arr = [];
-    try { arr = raw ? JSON.parse(raw) : []; } catch (e) { arr = []; }
-    listEl.innerHTML = arr.map(function (c) {
-      return '<div class="comment-item"><div class="c-name">' + escapeHtml(c.name) +
-        '</div><div class="c-date">' + escapeHtml(c.date || "") + '</div><div>' +
-        escapeHtml(c.text) + '</div></div>';
-    }).join("") || "";
-  }
+  var submitBtn = document.getElementById("commentSubmit");
+
   function escapeHtml(s) {
     return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   }
-  document.getElementById("commentSubmit").addEventListener("click", function () {
+
+  function render(docs) {
+    if (!docs.length) {
+      listEl.innerHTML = '<div class="comment-empty">No comments yet — be the first!</div>';
+      return;
+    }
+    listEl.innerHTML = docs.map(function (d) {
+      var c = d.data();
+      var date = c.timestamp && c.timestamp.toDate ? c.timestamp.toDate().toLocaleString() : "";
+      return '<div class="comment-item"><div class="c-name">' + escapeHtml(c.name) +
+        '</div><div class="c-date">' + escapeHtml(date) + '</div><div>' +
+        escapeHtml(c.text) + '</div></div>';
+    }).join("");
+  }
+
+  function load() {
+    db.collection("comments")
+      .where("pageId", "==", pageId)
+      .limit(50)
+      .get()
+      .then(function (snap) {
+        // Sort here instead of an orderBy() in the query, so this never
+        // needs a Firestore composite index to work.
+        var docs = snap.docs.slice().sort(function (a, b) {
+          var ta = a.data().timestamp ? a.data().timestamp.toMillis() : 0;
+          var tb = b.data().timestamp ? b.data().timestamp.toMillis() : 0;
+          return tb - ta;
+        });
+        render(docs);
+      })
+      .catch(function (err) {
+        console.error("Comment load failed:", err);
+        listEl.innerHTML = '<div class="comment-empty">Couldn\u2019t load comments right now.</div>';
+      });
+  }
+
+  submitBtn.addEventListener("click", function () {
     var name = (nameEl.value || "").trim();
     var text = (textEl.value || "").trim();
     if (!name) { alert("Please enter your name."); return; }
     if (!text) { alert("Please write a comment."); return; }
-    var arr = [];
-    try { arr = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) {}
-    arr.unshift({ name: name, text: text, date: new Date().toLocaleString() });
-    arr = arr.slice(0, 50);
-    localStorage.setItem(key, JSON.stringify(arr));
-    textEl.value = "";
-    load();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Posting…";
+    db.collection("comments").add({
+      pageId: pageId,
+      name: name.slice(0, 40),
+      text: text.slice(0, 500),
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(function () {
+      // Email notification is best-effort: if it fails (e.g. offline),
+      // the comment itself is already safely saved in Firestore either way.
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        page_title: pageTitle,
+        page_url: pageUrl,
+        from_name: name,
+        message: text
+      }).catch(function (err) {
+        console.error("Comment email notification failed:", err);
+      });
+
+      textEl.value = "";
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Post comment";
+      load();
+    }).catch(function (err) {
+      console.error("Comment post failed:", err);
+      alert("Couldn't post your comment. Please try again.");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Post comment";
+    });
   });
+
   load();
 })();
 </script>

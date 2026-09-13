@@ -41,7 +41,7 @@ import json
 import re
 import shutil
 import string
-import time
+import hashlib
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
@@ -100,7 +100,7 @@ def copy_root_static_files():
     """URLchecker.html + links.json power the download-redirect flow and
     must live at the SITE ROOT (not inside assets/), so they're copied
     straight into output/ on every build instead of being hand-managed."""
-    for name in ("URLchecker.html", "links.json"):
+    for name in ("URLchecker.html", "links.json", "manifest.json"):
         src = ROOT / name
         if src.exists():
             shutil.copy2(src, OUTPUT_DIR / name)
@@ -155,11 +155,39 @@ def write_download_data_js(items):
 
 
 
+NOTIFICATIONS_SEEN_FILE = ROOT / "notifications_seen.json"
+
+
+def load_notifications_seen():
+    if NOTIFICATIONS_SEEN_FILE.exists():
+        try:
+            return json.loads(NOTIFICATIONS_SEEN_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return {}
+
+
+def save_notifications_seen(seen_map):
+    NOTIFICATIONS_SEEN_FILE.write_text(json.dumps(seen_map, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def write_notifications_js(items):
     """Latest content notifications for the floating mail box (7-day window).
     Add optional data.json key "notifications": [{type, title, ts}] to override/extend.
+
+    Each auto-detected title's timestamp is looked up in
+    notifications_seen.json (persisted next to generate.py, not wiped by
+    clean_output()) instead of being stamped with "now" on every single
+    build. That file remembers the first time each title was actually
+    seen, so: (a) the "new content" list is now genuinely meaningful
+    instead of claiming everything is brand new on every run, and
+    (b) this output file stays byte-identical across rebuilds when
+    nothing changed, instead of forcing a re-upload every time.
     """
     from datetime import datetime, timezone
+    seen_map = load_notifications_seen()
+    now_iso = datetime.now(timezone.utc).isoformat()
+
     notes = []
     # Prefer explicit list from data.json if present
     data = load_data()
@@ -167,19 +195,23 @@ def write_notifications_js(items):
         notes.append({
             "type": n.get("type", "Update"),
             "title": n.get("title", ""),
-            "ts": n.get("ts") or datetime.now(timezone.utc).isoformat(),
+            "ts": n.get("ts") or now_iso,
             "date": n.get("date") or "",
         })
     # Auto: items with episode_links count as New Anime / New Episode
     for i in items:
         if not i.get("episode_links"):
             continue
+        title = i.get("title", "") + ((" — " + i["season"]) if i.get("season") else "")
+        if title not in seen_map:
+            seen_map[title] = now_iso
         notes.append({
             "type": "New Anime" if i.get("category") == "anime" else "New Series",
-            "title": i.get("title", "") + ((" — " + i["season"]) if i.get("season") else ""),
-            "ts": datetime.now(timezone.utc).isoformat(),
+            "title": title,
+            "ts": seen_map[title],
             "date": "Recently added",
         })
+    save_notifications_seen(seen_map)
     # Dedupe by title, keep first 30
     seen = set()
     unique = []
@@ -262,6 +294,30 @@ def brand_parts(site_name):
     return site_name, ""
 
 
+def compute_build_version():
+    """A short hash of everything that actually affects the CSS/JS a
+    browser needs to re-fetch (assets + templates). Used as the ?v=...
+    cache-busting query string.
+
+    This used to be int(time.time()) -- a fresh number on literally every
+    single run -- which meant every one of the 500+ generated pages had
+    different HTML byte-for-byte on every build, even when nothing about
+    the site had actually changed. Firebase Hosting diffs by content hash,
+    so that forced a full re-upload of the whole site every time. Hashing
+    the real inputs instead means unchanged pages stay byte-identical
+    across builds, so only what actually changed gets uploaded.
+    """
+    h = hashlib.sha256()
+    for f in sorted(ASSETS_DIR.rglob("*")):
+        if f.is_file():
+            h.update(str(f.relative_to(ASSETS_DIR)).encode("utf-8"))
+            h.update(f.read_bytes())
+    for f in sorted(TEMPLATES_DIR.rglob("*.html")):
+        h.update(str(f.relative_to(TEMPLATES_DIR)).encode("utf-8"))
+        h.update(f.read_bytes())
+    return h.hexdigest()[:10]
+
+
 def render_all():
     data = load_data()
     site_name = data.get("site_name", "MovieSite")
@@ -283,7 +339,7 @@ def render_all():
         "brand_head": head,
         "brand_tail": tail,
         "all_genres": all_genres,
-        "build_version": int(time.time()),
+        "build_version": compute_build_version(),
         "telegram_join_url": TELEGRAM_JOIN_URL,
         "report_problem_url": REPORT_PROBLEM_URL,
         "ad_config": AD_CONFIG,

@@ -15,9 +15,16 @@
         <div class="meta">{{ item.type }}{% if item.episode_tag %} · {{ item.episode_tag|replace("E ", "EP ") }}{% endif %}</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="{{ item.id }}" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="{{ item.id }}" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   {% else %}
   <p class="empty-msg">No titles found.</p>

@@ -23,10 +23,11 @@ ONE-TIME SETUP (edit the value below before first run):
         @HDMoviesDL4u
 
 IMAGES:
-    No TMDB anymore. The banner image is scraped straight from the post
-    page on https://www.animedubhindi.link (search by title -> open the
-    first result -> grab its featured image). If that site has nothing
-    for a title, it falls back to center-cropping the poster to 16:9.
+    No TMDB anymore. The banner image is scraped straight from the
+    search results page on https://toonworld4all.me (search by title ->
+    grab the first result's 16:9 featured image). If that site has
+    nothing for a title, it falls back to center-cropping the poster
+    to 16:9.
 
 NOTE ON THE DOWNLOAD BUTTON COLOR:
     Telegram's Bot API does not let a bot set a custom color for inline
@@ -58,7 +59,7 @@ POSTED_FILE = ROOT / "posted_telegram.json"
 TELEGRAM_BOT_TOKEN = "8885570507:AAG3mHJvmWX4y15YhKXH2hcCHestD8qhqiA"
 # ---------------------------------------------------------------------
 
-DOWNLOAD_LINK = "https://t.me/c/3917444779/9"  # same button link for every post
+DOWNLOAD_LINK = "https://hindianimestuff.web.app/?v=2"  # same button link for every post
 JOIN_CHANNEL = "@HindiAnimestuff"  # shown as "Join : ..." in every caption - edit if needed
 
 CHANNELS = {
@@ -91,53 +92,51 @@ def http_get(url, timeout=15):
         return r.read().decode("utf-8", errors="ignore")
 
 
-def animedubhindi_banner(title):
+def toonworld4all_banner(title, season=None):
     """
-    Search animedubhindi.link for the title and grab the post's banner
-    image (their blogger-hosted images are already ~16:9). Returns a
-    URL or None.
+    Search toonworld4all.me for the title (+ season when available) and
+    grab the first result's featured banner image directly from the
+    search results page (already ~16:9). Returns a URL or None.
     """
     try:
-        search_url = "https://www.animedubhindi.link/?s=" + urllib.parse.quote(title)
+        # Include season in the query so S1 / S2 don't share the same banner
+        query = title
+        if season and str(season).strip() and str(season).upper() not in ("N/A", "NONE", ""):
+            season_str = str(season).strip()
+            # Avoid duplicating "Season" if title already contains it
+            if "season" not in title.lower() and "season" not in season_str.lower():
+                query = f"{title} Season {season_str}"
+            elif "season" not in title.lower():
+                query = f"{title} {season_str}"
+            else:
+                query = f"{title} {season_str}"
+
+        search_url = "https://toonworld4all.me/?s=" + urllib.parse.quote(query)
         search_html = http_get(search_url)
 
-        # Grab the first search-result post link. Try the common WP
-        # "entry-title" pattern first, then fall back to any bookmark link.
-        m = re.search(r'entry-title["\'][^>]*>\s*<a[^>]+href="([^"]+)"', search_html)
+        # First result's 16:9 banner is already on the search page as
+        # <img ... width="300" height="169" src="..." class="... wp-post-image">
+        m = re.search(
+            r'<img[^>]+src="([^"]+)"[^>]*class="[^"]*wp-post-image[^"]*"',
+            search_html,
+        )
         if not m:
             m = re.search(
-                r'<a[^>]+href="(https://www\.animedubhindi\.link/[^"]+)"[^>]*rel="bookmark"',
+                r'<img[^>]+class="[^"]*wp-post-image[^"]*"[^>]*src="([^"]+)"',
                 search_html,
             )
-        if not m:
-            print(f"  animedubhindi: no search result for '{title}'")
-            return None
-        post_url = m.group(1)
+        if m:
+            return m.group(1)
 
-        post_html = http_get(post_url)
-
-        # Prefer the og:image meta tag (set to the post's featured/banner image).
-        m2 = re.search(
-            r'<meta[^>]+property=["\']og:image["\'][^>]+content="([^"]+)"',
-            post_html,
-        )
-        if m2:
-            return m2.group(1)
-
-        # Fallback: first blogger-hosted image found in the post body.
-        m3 = re.search(r'(https://blogger\.googleusercontent\.com/img/[^"\'\s]+)', post_html)
-        if m3:
-            return m3.group(1)
-
-        print(f"  animedubhindi: no image found on {post_url}")
+        print(f"  toonworld4all: no banner image in search results for '{query}'")
         return None
     except Exception as e:
-        print(f"  animedubhindi lookup failed for '{title}': {e}")
+        print(f"  toonworld4all lookup failed for '{title}': {e}")
         return None
 
 
 def crop_poster_to_16x9(poster_url):
-    """Last-resort fallback: if animedubhindi.link has nothing, center-crop the poster to 16:9."""
+    """Last-resort fallback: if toonworld4all.me has nothing, center-crop the poster to 16:9."""
     try:
         from PIL import Image
         from io import BytesIO
@@ -251,7 +250,7 @@ def main():
             continue
 
         caption = build_caption(item)
-        banner = animedubhindi_banner(item["title"])
+        banner = toonworld4all_banner(item["title"], item.get("season"))
 
         try:
             if banner:

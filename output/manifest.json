@@ -1,0 +1,15 @@
+{
+  "name": "HindiAnimestuff",
+  "short_name": "HindiAnimestuff",
+  "description": "Watch and download anime, anime movies and anime series in Hindi.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    { "src": "assets/favicons/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/favicons/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/favicons/maskable-icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

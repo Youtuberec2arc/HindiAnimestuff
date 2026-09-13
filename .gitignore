@@ -1,0 +1,34 @@
+# Firebase local cache
+.firebase/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Service account / private credentials
+serviceAccountKey.json
+firebase-service-account.json
+*-service-account.json
+google-services.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local/runtime files
+notifications_seen.json
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local Firebase cache
+.firebase/
+
+# Local Telegram posting state
+posted_telegram.json

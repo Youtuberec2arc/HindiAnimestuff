@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+/* Apply saved theme before first paint (avoids a flash of the wrong theme) */
+(function () {
+  try {
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  } catch (e) {}
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HindiAnimestuff — Comedy</title>
+
+<!-- Open Graph / Facebook / WhatsApp / Telegram link preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HindiAnimestuff">
+<meta property="og:url" content="https://hindianimestuff.web.app/">
+<meta property="og:title" content="HindiAnimestuff – Hindi Dubbed Anime & Cartoons in 480p, 720p, 1080p & 4K HD">
+<meta property="og:description" content="Watch & download anime and cartoons in Hindi, Tamil, Telugu, Malayalam, Kannada, English, Japanese & Bengali — available in 480p, 720p, 1080p & 4K HD with daily updates.">
+<meta property="og:image" content="https://i.ibb.co/ksywQrPd/NWLx-EUmj.jpg">
+<meta property="og:image:secure_url" content="https://i.ibb.co/ksywQrPd/NWLx-EUmj.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1733">
+<meta property="og:image:height" content="907">
+<meta property="og:image:alt" content="HindiAnimestuff - Your Ultimate Destination for Anime in Hindi">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HindiAnimestuff – Hindi Dubbed Anime & Cartoons in 480p, 720p, 1080p & 4K HD">
+<meta name="twitter:description" content="Watch & download anime and cartoons in Hindi, Tamil, Telugu, Malayalam, Kannada, English, Japanese & Bengali — available in 480p, 720p, 1080p & 4K HD with daily updates.">
+<meta name="twitter:image" content="https://i.ibb.co/ksywQrPd/NWLx-EUmj.jpg">
+<meta name="twitter:image:alt" content="HindiAnimestuff - Your Ultimate Destination for Anime in Hindi">
+
+<!-- Extra for better link previews -->
+<meta name="description" content="Watch & download anime and cartoons in Hindi, Tamil, Telugu, Malayalam, Kannada, English, Japanese & Bengali — available in 480p, 720p, 1080p & 4K HD with daily updates.">
+
 <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="../assets/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HindiAnimestuff">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=1787764671">
+<link rel="stylesheet" href="../assets/style.css?v=7358a0a6c7">
 </head>
 <body data-root="../">
 
@@ -25,6 +69,11 @@
   <button class="icon-btn" id="searchBtn" aria-label="Search">
     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
   </button>
+
+  <label class="switch" id="themeSwitch" aria-label="Toggle dark/bright theme">
+    <input type="checkbox" id="themeToggleInput">
+    <span class="slider"></span>
+  </label>
 </header>
 
 <!-- ===== SEARCH OVERLAY ===== -->
@@ -73,11 +122,15 @@
   <a href="../browse-genres.html" class="drawer-link active">All Genres</a>
   <div class="drawer-genre-list">
     
+    <a href="../genres/18.html" class="drawer-genre-chip">18+</a>
+    
     <a href="../genres/action.html" class="drawer-genre-chip">Action</a>
     
     <a href="../genres/action-and-adventure.html" class="drawer-genre-chip">Action & Adventure</a>
     
     <a href="../genres/adult.html" class="drawer-genre-chip">Adult</a>
+    
+    <a href="../genres/adult-animation.html" class="drawer-genre-chip">Adult Animation</a>
     
     <a href="../genres/adventure.html" class="drawer-genre-chip">Adventure</a>
     
@@ -88,6 +141,8 @@
     <a href="../genres/comedy.html" class="drawer-genre-chip">Comedy</a>
     
     <a href="../genres/crime.html" class="drawer-genre-chip">Crime</a>
+    
+    <a href="../genres/dark-fantasy.html" class="drawer-genre-chip">Dark Fantasy</a>
     
     <a href="../genres/drama.html" class="drawer-genre-chip">Drama</a>
     
@@ -110,6 +165,8 @@
     <a href="../genres/indian-anime.html" class="drawer-genre-chip">Indian Anime</a>
     
     <a href="../genres/isekai.html" class="drawer-genre-chip">Isekai</a>
+    
+    <a href="../genres/music.html" class="drawer-genre-chip">Music</a>
     
     <a href="../genres/mystery.html" class="drawer-genre-chip">Mystery</a>
     
@@ -149,7 +206,7 @@
 
 <div class="page-title">
   <h1>Comedy</h1>
-  <p>38 titles available</p>
+  <p>84 titles available</p>
 </div>
 <div class="grid" id="cardGrid">
   
@@ -168,9 +225,151 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="jujutsu-kaisen-s3" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="jujutsu-kaisen-s3" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="haikyu-s1" data-title="haikyu!!" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/haikyu-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/ecQ84z2sR0XapZu435MnFuEBzD8.jpg" alt="Haikyu!!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        
+        <div class="ep-badge">EP 25</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Haikyu!!</div>
+        <div class="meta">TV Series · EP 25</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="haikyu-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="haikyu-s2" data-title="haikyu!!" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/haikyu-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/bvYWwympr5Dv05bBgd3xwUhZk6W.jpg" alt="Haikyu!!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        
+        <div class="ep-badge">EP 25</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Haikyu!!</div>
+        <div class="meta">TV Series · EP 25</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="haikyu-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="haikyu-s3" data-title="haikyu!!" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/haikyu-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original//deFGQIm9cKYGr2xt136RUnA9sb5.jpg" alt="Haikyu!!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        
+        <div class="ep-badge">EP 10</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Haikyu!!</div>
+        <div class="meta">TV Series · EP 10</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="haikyu-s3" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="haikyu-s4" data-title="haikyu!!" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/haikyu-s4.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/zfOWZf3rMkgaXXNKOSTL33RBchx.jpg" alt="Haikyu!!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.7</div>
+        
+        <div class="ep-badge">EP 25</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Haikyu!!</div>
+        <div class="meta">TV Series · EP 25</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="haikyu-s4" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="kaguya-sama-love-is-war-s1" data-title="kaguya-sama: love is war" data-genres="animation|comedy|romance">
+    <a class="card-link" href="../pages/kaguya-sama-love-is-war-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/mmG1dDgjMJzrW6MLv3qHOf7mJcz.jpg" alt="Kaguya-sama: Love Is War" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Kaguya-sama: Love Is War</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="kaguya-sama-love-is-war-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="mob-psycho-100-s1" data-title="mob psycho 100" data-genres="animation|comedy|fantasy">
@@ -188,9 +387,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="mob-psycho-100-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="mob-psycho-100-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="mob-psycho-100-s2" data-title="mob psycho 100" data-genres="animation|comedy|fantasy">
@@ -208,9 +414,151 @@
         <div class="meta">TV Series · EP 14</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="mob-psycho-100-s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="mob-psycho-100-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="grand-blue-dreaming-s1" data-title="grand blue dreaming" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/grand-blue-dreaming-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/8KFx61jYmUMI0RsrLEIfDmAonxj.jpg–" alt="Grand Blue Dreaming" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Grand Blue Dreaming</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="grand-blue-dreaming-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="grand-blue-dreaming-s2" data-title="grand blue dreaming" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/grand-blue-dreaming-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/tKfzFYBbPik7zlKZpzC7XSqU9Tg.jpg" alt="Grand Blue Dreaming" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Grand Blue Dreaming</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="grand-blue-dreaming-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="spy-x-family-s1" data-title="spy x family" data-genres="animation|action|comedy">
+    <a class="card-link" href="../pages/spy-x-family-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/pviKF6N.jpg" alt="Spy x Family" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 25</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Spy x Family</div>
+        <div class="meta">TV Series · EP 25</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="spy-x-family-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="spy-x-family-s2" data-title="spy x family" data-genres="animation|action|comedy">
+    <a class="card-link" href="../pages/spy-x-family-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://i.ibb.co/whnPKwF/image.png" alt="Spy x Family" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Spy x Family</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="spy-x-family-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="spy-x-family-s3" data-title="spy x family" data-genres="animation|action|comedy">
+    <a class="card-link" href="../pages/spy-x-family-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/vzn5mTd2fcv9W5M52FKxCV7Oc.jpg" alt="Spy x Family" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.4</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Spy x Family</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="spy-x-family-s3" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="my-dress-up-darling-s1" data-title="my dress-up darling" data-genres="animation|comedy|romance">
@@ -228,9 +576,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="my-dress-up-darling-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="my-dress-up-darling-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="my-dress-up-darling-s2" data-title="my dress-up darling" data-genres="animation|comedy|romance">
@@ -248,9 +603,97 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="my-dress-up-darling-s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="my-dress-up-darling-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="one-punch-man-s1" data-title="one punch man" data-genres="animation|action|comedy">
+    <a class="card-link" href="../pages/one-punch-man-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://i.imgur.com/25t3SaT.jpg" alt="One Punch Man" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">One Punch Man</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="one-punch-man-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="one-punch-man-season-2" data-title="one punch man" data-genres="animation|action|comedy">
+    <a class="card-link" href="../pages/one-punch-man-season-2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/bS6GeCRInMRl6oQN6czCqPFdcHN.jpg" alt="One Punch Man" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">One Punch Man</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="one-punch-man-season-2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="one-punch-man-s3" data-title="one punch man" data-genres="animation|action|comedy">
+    <a class="card-link" href="../pages/one-punch-man-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/imYV5u6nNAoJrRAYzBo9cQG5Qn4.jpg" alt="One Punch Man" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">One Punch Man</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="one-punch-man-s3" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="witch-hat-atelier-s1" data-title="witch hat atelier" data-genres="animation|comedy|drama">
@@ -268,9 +711,16 @@
         <div class="meta">TV Series · EP 13</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="witch-hat-atelier-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="witch-hat-atelier-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="dr-stone-s2" data-title="dr. stone" data-genres="animation|action|adventure|comedy|sci-fi">
@@ -288,9 +738,43 @@
         <div class="meta">TV Series · EP 11</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="dr-stone-s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="dr-stone-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="you-and-i-are-polar-opposites-s1" data-title="you and i are polar opposites" data-genres="animation|comedy|romance">
+    <a class="card-link" href="../pages/you-and-i-are-polar-opposites-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/wti3dpVRj9pWHSzgpHDJvsF99QA.jpg" alt="You and I Are Polar Opposites" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.2</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">You and I Are Polar Opposites</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="you-and-i-are-polar-opposites-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="that-time-i-got-reincarnated-as-a-slime-s2" data-title="that time i got reincarnated as a slime" data-genres="animation|action|adventure|comedy|fantasy">
@@ -308,9 +792,16 @@
         <div class="meta">TV Series · EP 24</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="that-time-i-got-reincarnated-as-a-slime-s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="that-time-i-got-reincarnated-as-a-slime-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="that-time-i-got-reincarnated-as-a-slime-s3" data-title="that time i got reincarnated as a slime" data-genres="action|adventure|comedy|fantasy">
@@ -328,9 +819,43 @@
         <div class="meta">TV Series · EP 24</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="that-time-i-got-reincarnated-as-a-slime-s3" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="that-time-i-got-reincarnated-as-a-slime-s3" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="dorohedoro-s1" data-title="dorohedoro" data-genres="animation|comedy|action">
+    <a class="card-link" href="../pages/dorohedoro-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/zSMmRTopPIRr6913KX8pyiV6zsK.jpg" alt="Dorohedoro" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.1</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Dorohedoro</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="dorohedoro-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="food-wars-shokugeki-no-soma-s1" data-title="food wars!: shokugeki no soma" data-genres="animation|comedy|ecchi">
@@ -348,15 +873,49 @@
         <div class="meta">TV Series · EP 24</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="food-wars-shokugeki-no-soma-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="food-wars-shokugeki-no-soma-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
-  <div class="card" data-id="tamons-b-side-s1" data-title="tamon's b-side" data-genres="comedy|romance">
-    <a class="card-link" href="../pages/tamons-b-side-s1.html">
+  <div class="card" data-id="welcome-to-demon-school-iruma-kun-s2" data-title="welcome to demon school! iruma-kun" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/welcome-to-demon-school-iruma-kun-s2.html">
       <div class="thumb-wrap">
-        <img src="https://iili.io/Cfbzkxe.jpg" alt="Tamon's B-Side" loading="lazy">
+        <img src="https://image.tmdb.org/t/p/original/phpbEBYF2axfF4QF8LovZXnQq9M.jpg" alt="Welcome to Demon School! Iruma-kun" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 8.1</div>
+        
+        <div class="ep-badge">EP 21</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Welcome to Demon School! Iruma-kun</div>
+        <div class="meta">TV Series · EP 21</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="welcome-to-demon-school-iruma-kun-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="tamon-s-b-side-s1" data-title="tamon’s b-side" data-genres="animation|comedy|romance">
+    <a class="card-link" href="../pages/tamon-s-b-side-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/1iTCxEIK1xlmIXjHcLjt0UyOU8w.jpg" alt="Tamon’s B-Side" loading="lazy">
         <div class="thumb-scrim"></div>
         <div class="rating-badge">★ 7.9</div>
         
@@ -364,13 +923,47 @@
         
       </div>
       <div class="info">
-        <div class="title">Tamon's B-Side</div>
+        <div class="title">Tamon’s B-Side</div>
         <div class="meta">TV Series · EP 13</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="tamons-b-side-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="tamon-s-b-side-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="the-rising-of-the-shield-hero-s1" data-title="the rising of the shield hero" data-genres="animation|adventure|comedy">
+    <a class="card-link" href="../pages/the-rising-of-the-shield-hero-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/iyJ1vrMt7Ipdrs0b9UVSFmueCVV.jpg" alt="The Rising Of The Shield Hero" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.9</div>
+        
+        <div class="ep-badge">EP 25</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Rising Of The Shield Hero</div>
+        <div class="meta">TV Series · EP 25</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-rising-of-the-shield-hero-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="the-angel-next-door-s1" data-title="the angel next door spoils me rotten" data-genres="animation|comedy|romance">
@@ -388,9 +981,43 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="the-angel-next-door-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-angel-next-door-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="the-mighty-nein-s1" data-title="the mighty nein" data-genres="adult animation|comedy|fantasy">
+    <a class="card-link" href="../pages/the-mighty-nein-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/gK6U0C0T4uPqf9DRTgwQVUFC5dM.jpg" alt="The Mighty Nein" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.8</div>
+        
+        <div class="ep-badge">EP 8</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Mighty Nein</div>
+        <div class="meta">TV Series · EP 8</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-mighty-nein-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="the-angel-next-door-spoils-me-rotten-s2" data-title="the angel next door spoils me rotten" data-genres="animation|comedy|romance">
@@ -408,9 +1035,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="the-angel-next-door-spoils-me-rotten-s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-angel-next-door-spoils-me-rotten-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="wistoria-wand-and-sword-s1" data-title="wistoria: wand and sword" data-genres="animation|action|adventure|comedy|drama|fantasy">
@@ -428,9 +1062,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="wistoria-wand-and-sword-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="wistoria-wand-and-sword-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="ranma-1-2-2024-s1" data-title="ranma 1/2 (2024)" data-genres="animation|adventure|comedy">
@@ -448,9 +1089,97 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="ranma-1-2-2024-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="ranma-1-2-2024-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="let-this-grieving-soul-retire-s1" data-title="let this grieving soul retire!" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/let-this-grieving-soul-retire-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/qJQAxOoyaNpPIMEhjuA1okApofZ.jpg" alt="Let This Grieving Soul Retire!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Let This Grieving Soul Retire!</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="let-this-grieving-soul-retire-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="let-this-grieving-soul-retire-s2" data-title="let this grieving soul retire!" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/let-this-grieving-soul-retire-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/5BMsYRsMb5lvY97bMfDckCoksyR.jpg" alt="Let This Grieving Soul Retire!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Let This Grieving Soul Retire!</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="let-this-grieving-soul-retire-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="tojima-wants-to-be-a-kamen-rider-s1" data-title="tojima wants to be a kamen rider" data-genres="animation|action|comedy">
+    <a class="card-link" href="../pages/tojima-wants-to-be-a-kamen-rider-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/ceMou1uBynqPGHs5Es6Fw4xcL6i.jpg" alt="Tojima Wants to Be a Kamen Rider" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Tojima Wants to Be a Kamen Rider</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="tojima-wants-to-be-a-kamen-rider-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="marriagetoxin-s1" data-title="marriagetoxin" data-genres="animation|action|comedy">
@@ -468,9 +1197,43 @@
         <div class="meta">TV Series · EP 13</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="marriagetoxin-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="marriagetoxin-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="welcome-to-demon-school-iruma-kun-s1" data-title="welcome to demon school! iruma-kun" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/welcome-to-demon-school-iruma-kun-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/phpbEBYF2axfF4QF8LovZXnQq9M.jpg" alt="Welcome to Demon School! Iruma-kun" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.6</div>
+        
+        <div class="ep-badge">EP 23</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Welcome to Demon School! Iruma-kun</div>
+        <div class="meta">TV Series · EP 23</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="welcome-to-demon-school-iruma-kun-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s1" data-title="campfire cooking in another world with my absurd skill" data-genres="animation|comedy|fantasy">
@@ -488,9 +1251,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s2" data-title="campfire cooking in another world with my absurd skill" data-genres="animation|comedy|fantasy">
@@ -508,9 +1278,70 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="campfire-cooking-in-another-world-with-my-absurd-skill-seaso-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="cells-at-work-s2" data-title="cells at work!" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/cells-at-work-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/60VfVLYcdoMx80CUGOioxfFIDj0.jpg" alt="Cells at Work!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.5</div>
+        
+        <div class="ep-badge">EP 8</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Cells at Work!</div>
+        <div class="meta">TV Series · EP 8</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="cells-at-work-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="cells-at-work-code-black-s1" data-title="cells at work! code black" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/cells-at-work-code-black-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/lZQKzmE3P5CJ9Bj0wK4jMZuengp.jpg" alt="Cells at Work! Code Black" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.5</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Cells at Work! Code Black</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="cells-at-work-code-black-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="sakamoto-days-s1" data-title="sakamoto days" data-genres="comedy|action">
@@ -528,9 +1359,43 @@
         <div class="meta">TV Series · EP 22</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="sakamoto-days-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="sakamoto-days-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="my-clueless-first-friend-s1" data-title="my clueless first friend" data-genres="animation|comedy|romance">
+    <a class="card-link" href="../pages/my-clueless-first-friend-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/9tZHZz4WC2GOKVat2igukegVaSi.jpg" alt="My Clueless First Friend" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.4</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">My Clueless First Friend</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="my-clueless-first-friend-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="no-longer-allowed-in-another-world-s1" data-title="no longer allowed in another world" data-genres="action|adventure|comedy|fantasy|isekai">
@@ -548,9 +1413,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="no-longer-allowed-in-another-world-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="no-longer-allowed-in-another-world-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="ranma-1-2-s2" data-title="ranma 1/2" data-genres="animation|adventure|comedy">
@@ -568,15 +1440,22 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="ranma-1-2-s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="ranma-1-2-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="viral-hit-s1" data-title="viral hit" data-genres="animation|action|comedy">
     <a class="card-link" href="../pages/viral-hit-s1.html">
       <div class="thumb-wrap">
-        <img src="https://i.imgur.com/aOwHi9S.jpeg" alt="Viral Hit" loading="lazy">
+        <img src="https://m.media-amazon.com/images/M/MV5BZTgyMzMzM2QtMTY2Mi00ZWE4LThlMzUtOTViNGZmZGM4ZDU5XkEyXkFqcGc@._V1_.jpg" alt="Viral Hit" loading="lazy">
         <div class="thumb-scrim"></div>
         <div class="rating-badge">★ 7.32</div>
         
@@ -588,15 +1467,103 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="viral-hit-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="viral-hit-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="bofuri-i-don-t-want-to-get-hurt-so-i-ll-max-out-my-defense-s1" data-title="bofuri i don’t want to get hurt, so i’ll max out my defense" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/bofuri-i-don-t-want-to-get-hurt-so-i-ll-max-out-my-defense-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/fdcMiknnRcmVgWb9wGS9TxE06cG.jpg" alt="Bofuri I Don’t Want to Get Hurt, So I’ll Max Out My Defense" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Bofuri I Don’t Want to Get Hurt, So I’ll Max Out My Defense</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="bofuri-i-don-t-want-to-get-hurt-so-i-ll-max-out-my-defense-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="bofuri-i-don-t-want-to-get-hurt-so-i-ll-max-out-my-defense-s2" data-title="bofuri i don’t want to get hurt, so i’ll max out my defense" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/bofuri-i-don-t-want-to-get-hurt-so-i-ll-max-out-my-defense-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/2PLjOPstyBIWdQftMLnYRE5Cojg.jpg" alt="Bofuri I Don’t Want to Get Hurt, So I’ll Max Out My Defense" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Bofuri I Don’t Want to Get Hurt, So I’ll Max Out My Defense</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="bofuri-i-don-t-want-to-get-hurt-so-i-ll-max-out-my-defense-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="yaiba-samurai-legend-s1" data-title="yaiba samurai legend" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/yaiba-samurai-legend-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/verTvBJtck70LACpQUOfndC7w0y.jpg" alt="Yaiba Samurai Legend" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.2</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Yaiba Samurai Legend</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="yaiba-samurai-legend-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="super-subbu-s1" data-title="super subbu" data-genres="comedy">
     <a class="card-link" href="../pages/super-subbu-s1.html">
       <div class="thumb-wrap">
-        <img src="https://image.tmdb.org/t/p/w500/oNjTdpWZFccXGekoWwIqNZZEoXK.jpg" alt="Super Subbu" loading="lazy">
+        <img src="https://m.media-amazon.com/images/M/MV5BNGRhZWQ4YmYtZmZkMC00OTEzLThhNmItNTJjM2U0MGYyYzgyXkEyXkFqcGc@._V1_.jpg" alt="Super Subbu" loading="lazy">
         <div class="thumb-scrim"></div>
         <div class="rating-badge">★ 7.2</div>
         
@@ -608,9 +1575,178 @@
         <div class="meta">TV Series · Season 1</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="super-subbu-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="super-subbu-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="the-rising-of-the-shield-hero-s3" data-title="the rising of the shield hero" data-genres="animation|adventure|comedy">
+    <a class="card-link" href="../pages/the-rising-of-the-shield-hero-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/7wxRI61VaEmqtbyefHRN28eaXRp.jpg" alt="The Rising Of The Shield Hero" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.1</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Rising Of The Shield Hero</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-rising-of-the-shield-hero-s3" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="the-rising-of-the-shield-hero-s4" data-title="the rising of the shield hero" data-genres="animation|adventure|comedy">
+    <a class="card-link" href="../pages/the-rising-of-the-shield-hero-s4.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/3tJZ53eTcxURzoJSirM6bCCkrb0.jpg" alt="The Rising Of The Shield Hero" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.1</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Rising Of The Shield Hero</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-rising-of-the-shield-hero-s4" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="i-left-my-a-rank-party-to-help-my-former-students-reach-the-dungeon-depths-s1" data-title="i left my a-rank party to help my former students reach the dungeon depths!" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/i-left-my-a-rank-party-to-help-my-former-students-reach-the-dungeon-depths-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/XAKKKNkKjVPgV2LTCLLXNvMdWI.jpg" alt="I Left My A-Rank Party to Help My Former Students Reach the Dungeon Depths!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.1</div>
+        
+        <div class="ep-badge">EP 24</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">I Left My A-Rank Party to Help My Former Students Reach the Dungeon Depths!</div>
+        <div class="meta">TV Series · EP 24</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="i-left-my-a-rank-party-to-help-my-former-students-reach-the-dungeon-depths-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="let-this-grieving-soul-retire-s2" data-title="let this grieving soul retire!" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/let-this-grieving-soul-retire-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/5BMsYRsMb5lvY97bMfDckCoksyR.jpg" alt="Let This Grieving Soul Retire!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 7.0</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Let This Grieving Soul Retire!</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="let-this-grieving-soul-retire-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="i-ve-been-killing-slimes-for-300-years-and-maxed-out-my-level-s1" data-title="i’ve been killing slimes for 300 years and maxed out my level" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/i-ve-been-killing-slimes-for-300-years-and-maxed-out-my-level-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/mb0ZyMQiKkukygMIjsjEk9elTuI.jpg" alt="I’ve Been Killing Slimes for 300 Years and Maxed Out My Level" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.9</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">I’ve Been Killing Slimes for 300 Years and Maxed Out My Level</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="i-ve-been-killing-slimes-for-300-years-and-maxed-out-my-level-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="i-ve-been-killing-slimes-for-300-years-and-maxed-out-my-level-s2" data-title="i’ve been killing slimes for 300 years and maxed out my level" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/i-ve-been-killing-slimes-for-300-years-and-maxed-out-my-level-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/oJ5GKCXvsphPxjLFnaZHIGbLkDY.jpg" alt="I’ve Been Killing Slimes for 300 Years and Maxed Out My Level" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.9</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">I’ve Been Killing Slimes for 300 Years and Maxed Out My Level</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="i-ve-been-killing-slimes-for-300-years-and-maxed-out-my-level-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="easygoing-territory-defense-by-the-optimistic-lord-s1" data-title="easygoing territory defense by the optimistic lord" data-genres="animation|comedy|fantasy">
@@ -628,9 +1764,97 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="easygoing-territory-defense-by-the-optimistic-lord-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="easygoing-territory-defense-by-the-optimistic-lord-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="a-couple-of-cuckoos-s2" data-title="a couple of cuckoos" data-genres="animation|comedy|romance">
+    <a class="card-link" href="../pages/a-couple-of-cuckoos-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://a.storyblok.com/f/178900/1280x1809/d5b383ea96/a_couple_of_cuckoos_season2_erika_amano_ai_mochiziku_art.jpg/m/filters:quality(95)format(webp)" alt="A Couple of Cuckoos" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">A Couple of Cuckoos</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="a-couple-of-cuckoos-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="the-shiunji-family-children-s1" data-title="the shiunji family children" data-genres="animation|comedy|romance">
+    <a class="card-link" href="../pages/the-shiunji-family-children-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/vBrmvblWj4VviPvJM7Vjxmd2biN.jpg" alt="The Shiunji Family Children" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.8</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Shiunji Family Children</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-shiunji-family-children-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="a-misanthrope-teaches-a-class-for-demi-humans-s1" data-title="a misanthrope teaches a class for demi-humans" data-genres="comedy|drama|fantasy">
+    <a class="card-link" href="../pages/a-misanthrope-teaches-a-class-for-demi-humans-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/yOM6DxJblSheZwOeGwAzfIHxnCc.jpg" alt="A Misanthrope Teaches a Class for Demi-Humans" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.8</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">A Misanthrope Teaches a Class for Demi-Humans</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="a-misanthrope-teaches-a-class-for-demi-humans-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="watari-kun-s-is-about-to-collapse-s1" data-title="watari-kun’s ****** is about to collapse" data-genres="animation|comedy|romance">
@@ -648,9 +1872,43 @@
         <div class="meta">TV Series · EP 26</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="watari-kun-s-is-about-to-collapse-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="watari-kun-s-is-about-to-collapse-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="welcome-to-the-outcast-s-restaurant-s1" data-title="welcome to the outcast’s restaurant!" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/welcome-to-the-outcast-s-restaurant-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/llNZNRDxXi00Torc7EutWA2zOnd.jpg" alt="Welcome to the Outcast’s Restaurant!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.7</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Welcome to the Outcast’s Restaurant!</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="welcome-to-the-outcast-s-restaurant-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="from-old-country-bumpkin-to-master-swordsman-s1" data-title="from old country bumpkin to master swordsman" data-genres="action|adventure|animation|comedy|fantasy">
@@ -668,9 +1926,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="from-old-country-bumpkin-to-master-swordsman-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="from-old-country-bumpkin-to-master-swordsman-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="dr-stone-s4" data-title="dr. stone: science future" data-genres="adventure|comedy|shounen">
@@ -688,15 +1953,22 @@
         <div class="meta">TV Series · EP 37</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="dr-stone-s4" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="dr-stone-s4" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="jumanji-the-next-level" data-title="jumanji: the next level" data-genres="adventure|comedy|fantasy">
     <a class="card-link" href="../pages/jumanji-the-next-level.html">
       <div class="thumb-wrap">
-        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_5287.png" alt="Jumanji: The Next Level" loading="lazy">
+        <img src="https://m.media-amazon.com/images/M/MV5BYWFjODExZWEtYzIwYS00M2YwLTk4YTktNDQ5ZmVmOThiNmI1XkEyXkFqcGc@._V1_.jpg" alt="Jumanji: The Next Level" loading="lazy">
         <div class="thumb-scrim"></div>
         <div class="rating-badge">★ 6.7</div>
         
@@ -706,9 +1978,70 @@
         <div class="meta">Movie</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="jumanji-the-next-level" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="jumanji-the-next-level" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="the-rising-of-the-shield-hero-s2" data-title="the rising of the shield hero" data-genres="animation|adventure|comedy">
+    <a class="card-link" href="../pages/the-rising-of-the-shield-hero-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/3Z5jDBlcUtzM71YCsAw2u0kyVX6.jpg" alt="The Rising Of The Shield Hero" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.6</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">The Rising Of The Shield Hero</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-rising-of-the-shield-hero-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="reborn-to-master-the-blade-from-hero-king-to-extraordinary-squire-s1" data-title="reborn to master the blade from hero-king to extraordinary squire" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/reborn-to-master-the-blade-from-hero-king-to-extraordinary-squire-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/zrnUnV0PFWnJ1G6wDvzkQL2HL9d.jpg" alt="Reborn to Master the Blade From Hero-King to Extraordinary Squire" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Reborn to Master the Blade From Hero-King to Extraordinary Squire</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="reborn-to-master-the-blade-from-hero-king-to-extraordinary-squire-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="yowayowa-sensei-s1" data-title="yowayowa sensei" data-genres="animation|comedy|adult">
@@ -726,9 +2059,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="yowayowa-sensei-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="yowayowa-sensei-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="scum-of-the-brave-s1" data-title="scum of the brave" data-genres="animation|comedy|fantasy">
@@ -746,9 +2086,97 @@
         <div class="meta">TV Series · EP 24</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="scum-of-the-brave-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="scum-of-the-brave-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="demon-lord-retry-s1" data-title="demon lord, retry!" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/demon-lord-retry-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/vZ7xVfuyA4AggBywaahHrh4MUU0.jpg" alt="Demon Lord, Retry!" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.5</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Demon Lord, Retry!</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="demon-lord-retry-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="dandelion-s1" data-title="dandelion" data-genres="animation|comedy|fantasy">
+    <a class="card-link" href="../pages/dandelion-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/za5BZ2gMzL7vm2kAfmR21G5TFIU.jpg" alt="Dandelion" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.4</div>
+        
+        <div class="ep-badge">EP 7</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Dandelion</div>
+        <div class="meta">TV Series · EP 7</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="dandelion-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="mechanical-marie-s1" data-title="mechanical marie" data-genres="animation|comedy|romance">
+    <a class="card-link" href="../pages/mechanical-marie-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/1uBvmTta9mVjHpO7K5mQm9B09ng.jpg" alt="Mechanical Marie" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Mechanical Marie</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="mechanical-marie-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s2" data-title="reborn as a vending machine, i now wander the dungeon" data-genres="animation|comedy|fantasy">
@@ -766,9 +2194,16 @@
         <div class="meta">TV Series · EP 13</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s3" data-title="reborn as a vending machine, i now wander the dungeon" data-genres="animation|comedy|fantasy">
@@ -786,9 +2221,16 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s3" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s3" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s1" data-title="reborn as a vending machine, i now wander the dungeon" data-genres="adventure|comedy|fantasy">
@@ -806,15 +2248,49 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="reborn-as-a-vending-machine-i-now-wander-the-dungeon-season--s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="cinderella-chef-s3" data-title="cinderella chef" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/cinderella-chef-s3.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/1cbkl8loxuF6BgUoPTVjcorad27.jpg" alt="Cinderella Chef" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 6.3</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Cinderella Chef</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="cinderella-chef-s3" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="cocktail-2012" data-title="cocktail (2012)" data-genres="romance|drama|comedy">
     <a class="card-link" href="../pages/cocktail-2012.html">
       <div class="thumb-wrap">
-        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_5243.png" alt="Cocktail (2012)" loading="lazy">
+        <img src="https://m.media-amazon.com/images/M/MV5BZDBiYTRjNmMtNjcyZS00OGM1LTg2N2QtYjk2MmJhM2Q3NjY4XkEyXkFqcGc@._V1_.jpg" alt="Cocktail (2012)" loading="lazy">
         <div class="thumb-scrim"></div>
         <div class="rating-badge">★ 6.3</div>
         
@@ -824,9 +2300,16 @@
         <div class="meta">Movie</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="cocktail-2012" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="cocktail-2012" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="the-beginning-after-the-end-s2" data-title="the beginning after the end" data-genres="animation|comedy|fantasy">
@@ -844,9 +2327,70 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="the-beginning-after-the-end-s2" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-beginning-after-the-end-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="hana-kimi-s1" data-title="hana-kimi" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/hana-kimi-s1.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/wCZn0Is62Tx4HC9WuFGYysjeHCx.jpg" alt="Hana-Kimi" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ 0</div>
+        
+        <div class="ep-badge">EP 12</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Hana-Kimi</div>
+        <div class="meta">TV Series · EP 12</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="hana-kimi-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
+  </div>
+  
+  <div class="card" data-id="hana-kimi-s2" data-title="hana-kimi" data-genres="animation|comedy|drama">
+    <a class="card-link" href="../pages/hana-kimi-s2.html">
+      <div class="thumb-wrap">
+        <img src="https://image.tmdb.org/t/p/original/cWZ6ed6qfkq1Y7cSgWRg22ugLFP.jpg" alt="Hana-Kimi" loading="lazy">
+        <div class="thumb-scrim"></div>
+        <div class="rating-badge">★ ?</div>
+        
+        <div class="ep-badge">EP 13</div>
+        
+      </div>
+      <div class="info">
+        <div class="title">Hana-Kimi</div>
+        <div class="meta">TV Series · EP 13</div>
+      </div>
+    </a>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="hana-kimi-s2" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="the-ramparts-of-ice-s1" data-title="the ramparts of ice" data-genres="animation|comedy|drama">
@@ -864,9 +2408,16 @@
         <div class="meta">TV Series · EP 14</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="the-ramparts-of-ice-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="the-ramparts-of-ice-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="sentenced-to-be-a-hero-s1" data-title="sentenced to be a hero" data-genres="animation|comedy|drama">
@@ -884,15 +2435,22 @@
         <div class="meta">TV Series · EP 12</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="sentenced-to-be-a-hero-s1" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="sentenced-to-be-a-hero-s1" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
   <div class="card" data-id="cocktail-2-2026" data-title="cocktail 2 (2026)" data-genres="romance|comedy">
     <a class="card-link" href="../pages/cocktail-2-2026.html">
       <div class="thumb-wrap">
-        <img src="https://webp.iwebp.store/webp/280-380-3x-img.iwebp.store/images/imagecloud/poster_5233.png" alt="Cocktail 2 (2026)" loading="lazy">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjE4ZDFiMjctZTk0Yy00Mzk0LWIzMzItZmRjZTM0YzBjYmRiXkEyXkFqcGc@._V1_.jpg" alt="Cocktail 2 (2026)" loading="lazy">
         <div class="thumb-scrim"></div>
         <div class="rating-badge">★ ?</div>
         
@@ -902,9 +2460,16 @@
         <div class="meta">Movie</div>
       </div>
     </a>
-    <button class="fav-btn" data-fav-id="cocktail-2-2026" aria-label="Add to favourites">
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="tooltip fav-tooltip">
+      <button class="trigger fav-btn" data-fav-id="cocktail-2-2026" aria-label="Add to favourites">
+        <svg class="heart sizer" viewBox="0 0 24 24">
+          <path class="fill" fill="currentColor" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z"/>
+        </svg>
+        <svg class="checkround" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/></svg>
+      </button>
+      <div class="content" data-decrease="Like" data-increase="Liked"><span></span></div>
+    </div>
   </div>
   
 </div>
@@ -949,10 +2514,76 @@
   <div id="notifyList"><div class="notify-empty">No recent updates</div></div>
 </div>
 
-<script src="../assets/data.js?v=1787764671"></script>
-<script src="../assets/notifications-data.js?v=1787764671"></script>
-<script src="../assets/notifications.js?v=1787764671"></script>
-<script src="../assets/app.js?v=1787764671"></script>
+<!-- Join Telegram popup (shows once, then again after 24h) -->
+<div class="tg-popup-backdrop" id="tgPopupBackdrop">
+  <div class="tg-popup-card">
+    <button type="button" class="tg-popup-close" id="tgPopupClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="tg-popup-logo">
+      <img src="../assets/logo.svg" alt="HindiAnimestuff">
+    </div>
+
+    <h2 class="tg-popup-title">Join Our Official Telegram</h2>
+    <p class="tg-popup-text">
+      This website runs on a free subdomain and could be taken down or banned
+      at any time. Join our official Telegram channel now so you can still
+      find and access the site even if that happens.
+    </p>
+
+    <a href="https://t.me/+ZY6u10TE0PdjZmM1" target="_blank" rel="noopener" class="tg-popup-join-btn" id="tgPopupJoinBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 496 512"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg>
+      Join Telegram
+    </a>
+    <button type="button" class="tg-popup-joined-btn" id="tgPopupJoinedBtn">I've Already Joined</button>
+
+    <div class="tg-popup-divider"><span>or share this site</span></div>
+    <div class="tg-popup-share-row">
+      <a class="tg-popup-share-btn ss-whatsapp" href="https://wa.me/?text=Check%20out%20HindiAnimestuff%20-%20https://hindianimestuff.web.app/" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+        <svg viewBox="0 0 448 512" width="17" height="17" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+      </a>
+      <a class="tg-popup-share-btn ss-x" href="https://x.com/intent/tweet?url=https://hindianimestuff.web.app/&text=Check%20out%20HindiAnimestuff" target="_blank" rel="noopener" aria-label="Share on X">
+        <svg viewBox="0 0 512 512" width="15" height="15" fill="currentColor"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+      </a>
+      <a class="tg-popup-share-btn ss-facebook" href="https://www.facebook.com/sharer.php?u=https://hindianimestuff.web.app/" target="_blank" rel="noopener" aria-label="Share on Facebook">
+        <svg viewBox="0 0 512 512" width="17" height="17" fill="currentColor"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+      <button type="button" class="tg-popup-share-btn ss-copy" id="tgPopupCopyBtn" aria-label="Copy link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Page-transition loader (shown briefly before any internal navigation) -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader">
+    <div class="base">
+      <span></span>
+      <div class="face"></div>
+    </div>
+    <span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="longfazers">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/data.js?v=7358a0a6c7"></script>
+<script src="../assets/page-loader.js?v=7358a0a6c7"></script>
+<script src="../assets/notifications-data.js?v=7358a0a6c7"></script>
+<script src="../assets/notifications.js?v=7358a0a6c7"></script>
+<script src="../assets/app.js?v=7358a0a6c7"></script>
+<script src="../assets/tg-popup.js?v=7358a0a6c7"></script>
 
 </body>
 </html>

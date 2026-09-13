@@ -217,5 +217,22 @@
   }
   initFavButtons();
 
+  // ---------- Dark / Bright theme toggle ----------
+  (function () {
+    var input = document.getElementById("themeToggleInput");
+    if (!input) return;
+    var isDark = document.documentElement.classList.contains("dark-mode");
+    input.checked = isDark;
+    input.addEventListener("change", function () {
+      if (input.checked) {
+        document.documentElement.classList.add("dark-mode");
+        try { localStorage.setItem("theme", "dark"); } catch (e) {}
+      } else {
+        document.documentElement.classList.remove("dark-mode");
+        try { localStorage.setItem("theme", "bright"); } catch (e) {}
+      }
+    });
+  })();
+
   window.SITE_APP = { getFavs: getFavs };
 })();

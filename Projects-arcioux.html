@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>arcioux | Projects</title>
+  <meta name="description" content="arcioux Projects - HindiAnimeStuff and RecMusic Finder">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0b1220;
+      --card: #121c2b;
+      --card2: #162235;
+      --text: #f3f6fa;
+      --muted: #aab6c6;
+      --purple: #8b5cf6;
+      --cyan: #22d3ee;
+      --green: #34d399;
+      --border: #26364a;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(139, 92, 246, .10), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(34, 211, 238, .07), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", sans-serif;
+      padding: 28px 16px;
+    }
+
+    .container {
+      width: min(900px, 100%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .brand span {
+      color: var(--purple);
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .portfolio {
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      background: rgba(34, 211, 238, .05);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 32px 2px 24px;
+    }
+
+    .intro h1 {
+      font-size: clamp(25px, 5vw, 34px);
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* PROJECT CARD */
+
+    .project {
+      background: linear-gradient(
+        145deg,
+        rgba(18, 28, 43, .98),
+        rgba(13, 23, 36, .98)
+      );
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      margin-bottom: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: .08;
+      pointer-events: none;
+    }
+
+    .anime::before {
+      background: var(--purple);
+      top: -80px;
+      right: -50px;
+    }
+
+    .music::before {
+      background: var(--green);
+      top: -80px;
+      right: -50px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid;
+      border-radius: 30px;
+      padding: 7px 12px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      margin-bottom: 20px;
+    }
+
+    .anime .tag {
+      color: var(--purple);
+      border-color: var(--purple);
+      background: rgba(139, 92, 246, .05);
+    }
+
+    .music .tag {
+      color: var(--green);
+      border-color: var(--green);
+      background: rgba(52, 211, 153, .05);
+    }
+
+    .project h2 {
+      font-size: clamp(24px, 5vw, 31px);
+      margin-bottom: 6px;
+      letter-spacing: -.5px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .anime .subtitle {
+      color: var(--purple);
+    }
+
+    .music .subtitle {
+      color: var(--green);
+    }
+
+    .description {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+      margin-bottom: 18px;
+    }
+
+    .music .features {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature {
+      background: var(--card2);
+      border-radius: 11px;
+      padding: 13px;
+      min-height: 58px;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .feature small {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .languages {
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    /* WEBSITE */
+
+    .website {
+      border-top: 1px solid var(--border);
+      padding-top: 17px;
+    }
+
+    .website-label {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 7px;
+    }
+
+    .website a {
+      display: inline-block;
+      color: var(--cyan);
+      font-size: clamp(13px, 3vw, 16px);
+      font-weight: 800;
+      text-decoration: none;
+      word-break: break-all;
+      transition: .2s ease;
+    }
+
+    .website a:hover {
+      text-decoration: underline;
+      filter: brightness(1.2);
+    }
+
+    .visit {
+      display: inline-flex;
+      margin-left: 8px;
+      padding: 5px 9px;
+      border-radius: 7px;
+      background: rgba(34, 211, 238, .08);
+      border: 1px solid rgba(34, 211, 238, .3);
+      color: var(--cyan);
+      font-size: 9px;
+      font-weight: 800;
+      vertical-align: middle;
+    }
+
+    /* FOOTER */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+
+      body {
+        padding: 18px 12px;
+      }
+
+      header {
+        padding-bottom: 18px;
+      }
+
+      .brand {
+        font-size: 25px;
+      }
+
+      .portfolio {
+        font-size: 9px;
+        padding: 7px 10px;
+      }
+
+      .intro {
+        padding: 25px 2px 20px;
+      }
+
+      .project {
+        padding: 20px;
+        border-radius: 15px;
+      }
+
+      .features,
+      .music .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature {
+        padding: 11px;
+      }
+
+      .visit {
+        margin: 8px 0 0;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .features,
+      .music .features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project h2 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- HEADER -->
+
+    <header>
+      <div>
+        <div class="brand">arcioux<span>.</span></div>
+        <div class="brand-sub">PROJECTS</div>
+      </div>
+
+      <div class="portfolio">
+        PORTFOLIO
+      </div>
+    </header>
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+      <h1>Selected Projects</h1>
+      <p>
+        Web projects focused on anime discovery, entertainment
+        and intelligent music identification.
+      </p>
+    </section>
+
+
+    <!-- PROJECT 01 -->
+
+    <section class="project anime">
+
+      <div class="tag">
+        01&nbsp;&nbsp; ANIME PLATFORM
+      </div>
+
+      <h2>HindiAnimeStuff</h2>
+
+      <div class="subtitle">
+        Multi-language Anime & Movie Platform
+      </div>
+
+      <p class="description">
+        A mobile-first anime platform designed for easy discovery
+        and fast access, featuring 300+ anime and movies across
+        multiple dubbed languages.
+      </p>
+
+
+      <div class="features">
+
+        <div class="feature">
+          <strong>300+</strong>
+          <small>Anime & Movies</small>
+        </div>
+
+        <div class="feature">
+          <strong>5</strong>
+          <small>Languages</small>
+        </div>
+
+        <div class="feature">
+          <strong>HD</strong>
+          <small>Quality</small>
+        </div>
+
+        <div class="feature">
+          <strong>Fast</strong>
+          <small>Downloads</small>
+        </div>
+
+      </div>
+
+
+      <div class="languages">
+        Hindi • Tamil • Telugu • English • Japanese
+      </div>
+
+
+      <div class="website">
+
+        <span class="website-label">
+          VISIT WEBSITE
+        </span>
+
+        <a
+          href="https://hindianimestuff.web.app/?v=2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          hindianimestuff.web.app/?v=2
+        </a>
+
+        <span class="visit">
+          OPEN ↗
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECT 02 -->
+
+    <section class="project music">
+
+      <div class="tag">
+        02&nbsp;&nbsp; MUSIC TOOL
+      </div>
+
+      <h2>RecMusic Finder</h2>
+
+      <div class="subtitle">
+        Instant Song Identification
+      </div>
+
+      <p class="description">
+        Identify songs using your microphone by playing music from
+        another device and receive the song name within seconds.
+      </p>
+
+
+      <div class="features">
+
+        <div class="feature">
+          <strong>Fast</strong>
+          <small>Simple</small>
+        </div>
+
+        <div class="feature">
+          <strong>Mic</strong>
+          <small>Detection</small>
+        </div>
+
+        <div class="feature">
+          <strong>Instant</strong>
+          <small>Results</small>
+        </div>
+
+      </div>
+
+
+      <div class="website">
+
+        <span class="website-label">
+          VISIT WEBSITE
+        </span>
+
+        <a
+          href="https://recmusic-finder.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          recmusic-finder.vercel.app
+        </a>
+
+        <span class="visit">
+          OPEN ↗
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div>Created by @QC_4DI7YA</div>
+      <div>Web • Anime • Music</div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

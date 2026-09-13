@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+/* Apply saved theme before first paint (avoids a flash of the wrong theme) */
+(function () {
+  try {
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  } catch (e) {}
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download I’m Standing on a Million Lives — HindiAnimestuff</title>
+
+<!-- Open Graph / Facebook / WhatsApp / Telegram link preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HindiAnimestuff">
+<meta property="og:url" content="https://hindianimestuff.web.app/">
+<meta property="og:title" content="HindiAnimestuff – Hindi Dubbed Anime & Cartoons in 480p, 720p, 1080p & 4K HD">
+<meta property="og:description" content="Watch & download anime and cartoons in Hindi, Tamil, Telugu, Malayalam, Kannada, English, Japanese & Bengali — available in 480p, 720p, 1080p & 4K HD with daily updates.">
+<meta property="og:image" content="https://i.ibb.co/ksywQrPd/NWLx-EUmj.jpg">
+<meta property="og:image:secure_url" content="https://i.ibb.co/ksywQrPd/NWLx-EUmj.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1733">
+<meta property="og:image:height" content="907">
+<meta property="og:image:alt" content="HindiAnimestuff - Your Ultimate Destination for Anime in Hindi">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HindiAnimestuff – Hindi Dubbed Anime & Cartoons in 480p, 720p, 1080p & 4K HD">
+<meta name="twitter:description" content="Watch & download anime and cartoons in Hindi, Tamil, Telugu, Malayalam, Kannada, English, Japanese & Bengali — available in 480p, 720p, 1080p & 4K HD with daily updates.">
+<meta name="twitter:image" content="https://i.ibb.co/ksywQrPd/NWLx-EUmj.jpg">
+<meta name="twitter:image:alt" content="HindiAnimestuff - Your Ultimate Destination for Anime in Hindi">
+
+<!-- Extra for better link previews -->
+<meta name="description" content="Watch & download anime and cartoons in Hindi, Tamil, Telugu, Malayalam, Kannada, English, Japanese & Bengali — available in 480p, 720p, 1080p & 4K HD with daily updates.">
+
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicons/favicon-48x48.png">
+<link rel="shortcut icon" href="../assets/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HindiAnimestuff">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css?v=7358a0a6c7">
+</head>
+<body data-root="../">
+
+<!-- ===== TOP HEADER ===== -->
+<header class="site-header">
+  <button class="icon-btn" id="menuBtn" aria-label="Menu">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+
+  <a href="../index.html" class="brand-logo" aria-label="HindiAnimestuff">
+    <img src="../assets/logo.svg" alt="logo">
+  </a>
+
+  <button class="icon-btn" id="searchBtn" aria-label="Search">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+
+  <label class="switch" id="themeSwitch" aria-label="Toggle dark/bright theme">
+    <input type="checkbox" id="themeToggleInput">
+    <span class="slider"></span>
+  </label>
+</header>
+
+<!-- ===== SEARCH OVERLAY ===== -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-bar">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input type="text" id="searchInput" placeholder="Search titles..." autocomplete="off">
+    <button class="icon-btn" id="searchCloseBtn" aria-label="Close">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- ===== SIDE DRAWER MENU ===== -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<nav class="drawer" id="drawer">
+  <div class="drawer-head">
+    <img src="../assets/logo.svg" alt="logo" class="drawer-logo">
+    <button class="icon-btn" id="drawerCloseBtn" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <a href="../index.html" class="drawer-link ">Home</a>
+  <a href="../trending.html" class="drawer-link ">Trending</a>
+  <a href="../browse-az.html" class="drawer-link ">A-Z Anime List</a>
+  <a href="../series.html" class="drawer-link ">Series</a>
+  <a href="../movies.html" class="drawer-link ">Movies</a>
+  <a href="../how-to-download.html" class="drawer-link ">How To Download</a>
+  <a href="../report.html" class="drawer-link ">Report Link Not Working</a>
+
+  <a href="https://t.me/+ZY6u10TE0PdjZmM1" target="_blank" rel="noopener" class="drawer-tg-bar">
+    <svg class="drawer-tg-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+    <span class="drawer-tg-text">
+      <small>JOIN US ON</small>
+      <strong>Join Telegram</strong>
+    </span>
+    <span class="drawer-tg-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M16 0 0 6.1l4.8 1.7L6.7 14l2.3-3.2 3.6 2.7L16 0zM6.2 7.4l6.7-4.3-5.4 5.2-.2 2.4-1.1-3.3z"/></svg>
+      Join
+    </span>
+  </a>
+
+  
+  <div class="drawer-section-label">Browse by Genre</div>
+  <a href="../browse-genres.html" class="drawer-link ">All Genres</a>
+  <div class="drawer-genre-list">
+    
+    <a href="../genres/18.html" class="drawer-genre-chip">18+</a>
+    
+    <a href="../genres/action.html" class="drawer-genre-chip">Action</a>
+    
+    <a href="../genres/action-and-adventure.html" class="drawer-genre-chip">Action & Adventure</a>
+    
+    <a href="../genres/adult.html" class="drawer-genre-chip">Adult</a>
+    
+    <a href="../genres/adult-animation.html" class="drawer-genre-chip">Adult Animation</a>
+    
+    <a href="../genres/adventure.html" class="drawer-genre-chip">Adventure</a>
+    
+    <a href="../genres/animation.html" class="drawer-genre-chip">Animation</a>
+    
+    <a href="../genres/anime.html" class="drawer-genre-chip">Anime</a>
+    
+    <a href="../genres/comedy.html" class="drawer-genre-chip">Comedy</a>
+    
+    <a href="../genres/crime.html" class="drawer-genre-chip">Crime</a>
+    
+    <a href="../genres/dark-fantasy.html" class="drawer-genre-chip">Dark Fantasy</a>
+    
+    <a href="../genres/drama.html" class="drawer-genre-chip">Drama</a>
+    
+    <a href="../genres/ecchi.html" class="drawer-genre-chip">Ecchi</a>
+    
+    <a href="../genres/family.html" class="drawer-genre-chip">Family</a>
+    
+    <a href="../genres/fantasy.html" class="drawer-genre-chip">Fantasy</a>
+    
+    <a href="../genres/harem.html" class="drawer-genre-chip">Harem</a>
+    
+    <a href="../genres/hentai.html" class="drawer-genre-chip">Hentai</a>
+    
+    <a href="../genres/historical.html" class="drawer-genre-chip">Historical</a>
+    
+    <a href="../genres/history.html" class="drawer-genre-chip">History</a>
+    
+    <a href="../genres/horror.html" class="drawer-genre-chip">Horror</a>
+    
+    <a href="../genres/indian-anime.html" class="drawer-genre-chip">Indian Anime</a>
+    
+    <a href="../genres/isekai.html" class="drawer-genre-chip">Isekai</a>
+    
+    <a href="../genres/music.html" class="drawer-genre-chip">Music</a>
+    
+    <a href="../genres/mystery.html" class="drawer-genre-chip">Mystery</a>
+    
+    <a href="../genres/romance.html" class="drawer-genre-chip">Romance</a>
+    
+    <a href="../genres/sci-fi.html" class="drawer-genre-chip">Sci-Fi</a>
+    
+    <a href="../genres/sci-fi-and-fantasy.html" class="drawer-genre-chip">Sci-Fi & Fantasy</a>
+    
+    <a href="../genres/science-fiction.html" class="drawer-genre-chip">Science Fiction</a>
+    
+    <a href="../genres/seinen.html" class="drawer-genre-chip">Seinen</a>
+    
+    <a href="../genres/shounen.html" class="drawer-genre-chip">Shounen</a>
+    
+    <a href="../genres/slice-of-life.html" class="drawer-genre-chip">Slice of Life</a>
+    
+    <a href="../genres/sport.html" class="drawer-genre-chip">Sport</a>
+    
+    <a href="../genres/supernatural.html" class="drawer-genre-chip">Supernatural</a>
+    
+    <a href="../genres/supernatural-horror.html" class="drawer-genre-chip">Supernatural Horror</a>
+    
+    <a href="../genres/survival.html" class="drawer-genre-chip">Survival</a>
+    
+    <a href="../genres/suspense.html" class="drawer-genre-chip">Suspense</a>
+    
+    <a href="../genres/thriller.html" class="drawer-genre-chip">Thriller</a>
+    
+    <a href="../genres/war.html" class="drawer-genre-chip">War</a>
+    
+  </div>
+  
+</nav>
+
+<main class="page-main">
+
+<div class="dl-page">
+  <div class="dl-topbar">
+    <a class="dl-back" href="../pages/i-m-standing-on-a-million-lives-s1.html">&larr; Back to Info</a>
+  </div>
+
+  <div class="dl-header">
+    <div class="dl-poster">
+      <img src="https://image.tmdb.org/t/p/original/vdUva7C2B1wZI2D4vjBSWJIc8IG.jpg" alt="I’m Standing on a Million Lives" onerror="this.style.display='none'">
+    </div>
+    <div class="dl-header-info">
+      <h1 class="dl-title">I’m Standing on a Million Lives</h1>
+      <span class="dl-season-badge">Season 1</span>
+      <div class="dl-meta">
+        <span>1080p FHD | 720p HD | 480p BDRip</span>
+        <span>Japanese · English · Hindi</span>
+        <span>12 Episodes</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <section class="dl-section">
+    <h2 class="dl-section-title">Seasons</h2>
+    <div class="dl-season-row">
+      
+      <a class="dl-season-chip active" href="../download/i-m-standing-on-a-million-lives-s1.html">Season 1</a>
+      
+      <a class="dl-season-chip " href="../download/i-m-standing-on-a-million-lives-s2.html">Season 2</a>
+      
+    </div>
+  </section>
+  
+
+  <section class="dl-section">
+    <h2 class="dl-section-title">Episodes</h2>
+    <div class="dl-episode-list">
+      
+      
+      <div class="dl-episode-card" id="ep-01">
+        <div class="dl-ep-label">Episode 01</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=01&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=01&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=01&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-02">
+        <div class="dl-ep-label">Episode 02</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=02&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=02&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=02&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-03">
+        <div class="dl-ep-label">Episode 03</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=03&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=03&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=03&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-04">
+        <div class="dl-ep-label">Episode 04</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=04&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=04&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=04&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-05">
+        <div class="dl-ep-label">Episode 05</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=05&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=05&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=05&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-06">
+        <div class="dl-ep-label">Episode 06</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=06&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=06&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=06&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-07">
+        <div class="dl-ep-label">Episode 07</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=07&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=07&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=07&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-08">
+        <div class="dl-ep-label">Episode 08</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=08&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=08&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=08&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-09">
+        <div class="dl-ep-label">Episode 09</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=09&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=09&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=09&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-10">
+        <div class="dl-ep-label">Episode 10</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=10&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=10&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=10&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-11">
+        <div class="dl-ep-label">Episode 11</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=11&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=11&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=11&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+      
+      <div class="dl-episode-card" id="ep-12">
+        <div class="dl-ep-label">Episode 12</div>
+        <div class="dl-ep-qualities">
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=12&q=1080p">1080p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=12&q=720p">720p</a>
+            
+          
+            
+            <a class="dl-q-btn" href="../download/file.html?sid=i-m-standing-on-a-million-lives-s1&ep=12&q=480p">480p</a>
+            
+          
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  
+  <section class="dl-section">
+    <h2 class="dl-section-title">♥ You May Also Like</h2>
+    <div class="dl-related-grid">
+      
+      <a class="dl-related-card" href="../pages/re-zero-starting-life-in-another-world-s1.html">
+        <img src="https://image.tmdb.org/t/p/original/a8p5VEnstPypeZWhsKhEadRG3jW.jpg" alt="Re: Zero – Starting Life in Another World" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Re: Zero – Starting Life in Another World</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/re-zero-starting-life-in-another-world-s2.html">
+        <img src="https://image.tmdb.org/t/p/original/lcDd8MrYDnpPQaXjcAFXdpoUU8m.jpg" alt="Re: Zero – Starting Life in Another World" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Re: Zero – Starting Life in Another World</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/re-zero-starting-life-in-another-world-s3.html">
+        <img src="https://image.tmdb.org/t/p/original/9Iw3MIhl16m1xz5APoG2AdvfJsU.jpg" alt="Re: Zero – Starting Life in Another World" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Re: Zero – Starting Life in Another World</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/re-zero-starting-life-in-another-world-season-4-episodes-s4.html">
+        <img src="https://image.tmdb.org/t/p/original/rB1Dvo446eQgiMq6sDGstj4sE3F.jpg" alt="Re: Zero – Starting Life in Another World" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Re: Zero – Starting Life in Another World</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/mushoku-tensei-jobless-reincarnation-s3.html">
+        <img src="https://iili.io/CycdZI1.jpg" alt="Mushoku Tensei: Jobless Reincarnation" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Mushoku Tensei: Jobless Reincarnation</span>
+      </a>
+      
+      <a class="dl-related-card" href="../pages/mushoku-tensei-jobless-reincarnation-s1.html">
+        <img src="https://image.tmdb.org/t/p/original/fHXI3fJN0ZOVw2OmLmY2t9VgV83.jpg" alt="Mushoku Tensei: Jobless Reincarnation" loading="lazy" onerror="this.src='../assets/logo.svg'">
+        <span class="dl-related-title">Mushoku Tensei: Jobless Reincarnation</span>
+      </a>
+      
+    </div>
+  </section>
+  
+
+  <div class="dl-actions">
+    <a class="dl-telegram-btn" href="https://t.me/+ZY6u10TE0PdjZmM1" target="_blank" rel="noopener">✈ Join Telegram</a>
+    <a class="dl-report-btn" href="https://t.me/+xo_0Z-JlYIU5NDg1" target="_blank" rel="noopener">⚠ Report a Problem</a>
+  </div>
+
+  
+  <div class="ad-slot ad-slot-download" data-ad-network="placeholder" data-ad-enabled="false" aria-hidden="true"></div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  &copy; HindiAnimestuff doesn't host files. We only index third-party links already available online.
+</footer>
+
+<!-- ===== BOTTOM NAV (mobile + desktop) ===== -->
+<nav class="bottom-nav">
+  <a href="../index.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="../trending.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M12 2c1 4-4 5-4 9a4 4 0 0 0 8 0c0-2-1-3-1-3s2 1 2 4a6 6 0 0 1-12 0c0-5 5-6 5-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Trending</span>
+  </a>
+  <button class="bn-item bn-search" id="bnSearchBtn">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Search</span>
+  </button>
+  <a href="../favourites.html" class="bn-item ">
+    <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2.4 4 6.5 4 9 4 11 5.6 12 7c1-1.4 3-3 5.5-3 4.1 0 5.8 4.2 4 8-2.5 4.5-9.5 9-9.5 9z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    <span>Favourite</span>
+  </a>
+  <button class="bn-item bn-menu" id="bnMenuBtn">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Menu</span>
+  </button>
+</nav>
+
+<!-- Floating notifications (latest 7 days) -->
+<button type="button" class="notify-fab" id="notifyFab" aria-label="Notifications" title="What's new">
+  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="notify-dot" id="notifyDot"></span>
+</button>
+<div class="notify-panel" id="notifyPanel">
+  <h3>&#128276; What's New</h3>
+  <div id="notifyList"><div class="notify-empty">No recent updates</div></div>
+</div>
+
+<!-- Join Telegram popup (shows once, then again after 24h) -->
+<div class="tg-popup-backdrop" id="tgPopupBackdrop">
+  <div class="tg-popup-card">
+    <button type="button" class="tg-popup-close" id="tgPopupClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="tg-popup-logo">
+      <img src="../assets/logo.svg" alt="HindiAnimestuff">
+    </div>
+
+    <h2 class="tg-popup-title">Join Our Official Telegram</h2>
+    <p class="tg-popup-text">
+      This website runs on a free subdomain and could be taken down or banned
+      at any time. Join our official Telegram channel now so you can still
+      find and access the site even if that happens.
+    </p>
+
+    <a href="https://t.me/+ZY6u10TE0PdjZmM1" target="_blank" rel="noopener" class="tg-popup-join-btn" id="tgPopupJoinBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 496 512"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg>
+      Join Telegram
+    </a>
+    <button type="button" class="tg-popup-joined-btn" id="tgPopupJoinedBtn">I've Already Joined</button>
+
+    <div class="tg-popup-divider"><span>or share this site</span></div>
+    <div class="tg-popup-share-row">
+      <a class="tg-popup-share-btn ss-whatsapp" href="https://wa.me/?text=Check%20out%20HindiAnimestuff%20-%20https://hindianimestuff.web.app/" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+        <svg viewBox="0 0 448 512" width="17" height="17" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+      </a>
+      <a class="tg-popup-share-btn ss-x" href="https://x.com/intent/tweet?url=https://hindianimestuff.web.app/&text=Check%20out%20HindiAnimestuff" target="_blank" rel="noopener" aria-label="Share on X">
+        <svg viewBox="0 0 512 512" width="15" height="15" fill="currentColor"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+      </a>
+      <a class="tg-popup-share-btn ss-facebook" href="https://www.facebook.com/sharer.php?u=https://hindianimestuff.web.app/" target="_blank" rel="noopener" aria-label="Share on Facebook">
+        <svg viewBox="0 0 512 512" width="17" height="17" fill="currentColor"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+      <button type="button" class="tg-popup-share-btn ss-copy" id="tgPopupCopyBtn" aria-label="Copy link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Page-transition loader (shown briefly before any internal navigation) -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader">
+    <div class="base">
+      <span></span>
+      <div class="face"></div>
+    </div>
+    <span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="longfazers">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/data.js?v=7358a0a6c7"></script>
+<script src="../assets/page-loader.js?v=7358a0a6c7"></script>
+<script src="../assets/notifications-data.js?v=7358a0a6c7"></script>
+<script src="../assets/notifications.js?v=7358a0a6c7"></script>
+<script src="../assets/app.js?v=7358a0a6c7"></script>
+<script src="../assets/tg-popup.js?v=7358a0a6c7"></script>
+
+</body>
+</html>
